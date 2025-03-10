@@ -38,10 +38,10 @@ function HeroSection() {
                     <AnimatedSection animation="fadeInUp" delay={0.1}>
                       <div className="flex gap-4">
                         <Button href="/products" variant="primary">
-                            Products
+                            Sản phẩm
                         </Button>
                         <Button href="/services" variant="second">
-                            Services
+                            Dịch vụ
                         </Button>
                       </div>
                     </AnimatedSection>

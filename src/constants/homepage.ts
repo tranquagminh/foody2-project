@@ -1,11 +1,11 @@
 export const HERO_SLIDES = [
     {
         image: '/images/carousel/carousel-1.jpg',
-        title: 'Organic Food Is Good For Health',
+        title: 'Thực Phẩm Hữu Cơ Tốt Cho Sức Khỏe',
     },
     {
         image: '/images/carousel/carousel-2.jpg',
-        title: 'Natural Food Is Always Healthy',
+        title: 'Thực Phẩm Tự Nhiên Luôn Tốt Cho Sức Khỏe',
     }
     ];
 
