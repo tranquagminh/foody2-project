@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import SectionTitle from '../../../common/SectionTitle';
 import { products } from '../../../../constants/homepage';
 import SectionContainer from '../../../shared/SectionContainer';
+import Pagination from '@/components/shared/Pagination';
 
 const ITEMS_PER_PAGE = 8; // Số sản phẩm trên mỗi trang
 
@@ -54,8 +55,6 @@ const ProductSection = () => {
     currentPage * ITEMS_PER_PAGE
   );
 
-  // Tạo mảng số trang để render
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   // Reset về trang 1 khi đổi tab
   const handleTabChange = (tab: string) => {
@@ -119,47 +118,9 @@ const ProductSection = () => {
       </div>
 
       {/* Pagination */}
-      {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-2 mt-12">
-          {/* Previous button */}
-          <button
-            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-            disabled={currentPage === 1}
-            className={`w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#3cb815] transition-colors
-              ${currentPage === 1 
-                ? 'opacity-50 cursor-not-allowed' 
-                : 'hover:bg-[#3cb815] hover:text-white'}`}
-          >
-            ←
-          </button>
-
-          {/* Page numbers */}
-          {pageNumbers.map(number => (
-            <button
-              key={number}
-              onClick={() => setCurrentPage(number)}
-              className={`w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#3cb815] transition-colors
-                ${currentPage === number 
-                  ? 'bg-[#3cb815] text-white' 
-                  : 'hover:bg-[#3cb815] hover:text-white'}`}
-            >
-              {number}
-            </button>
-          ))}
-
-          {/* Next button */}
-          <button
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-            disabled={currentPage === totalPages}
-            className={`w-10 h-10 flex items-center justify-center rounded-full border-2 border-[#3cb815] transition-colors
-              ${currentPage === totalPages 
-                ? 'opacity-50 cursor-not-allowed' 
-                : 'hover:bg-[#3cb815] hover:text-white'}`}
-          >
-            →
-          </button>
-        </div>
-      )}
+      {totalPages > 1 && 
+          <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+      }
     </SectionContainer>
   );
 };

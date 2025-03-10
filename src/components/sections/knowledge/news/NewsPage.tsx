@@ -3,6 +3,7 @@ import { useState } from 'react';
 import NewsItem from './NewsItem';
 import { newsData } from '@/constants/homepage';
 import Pagination from '@/components/shared/Pagination';
+import AnimatedSection from '@/components/shared/AnimatedSection';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -14,24 +15,26 @@ const NewsPage = () => {
     currentPage * ITEMS_PER_PAGE);
 
   return (
-    <div className="container mx-auto px-4">
-      {currentNews.map((news, index) => (
-        <NewsItem
-          key={index}
-          title={news.title}
-          date={news.date}
-          comments={news.comments}
-          excerpt={news.excerpt}
-          imageUrl={news.imageUrl}
-          link={news.link}
+    <AnimatedSection animation="fadeInUp" delay={0.1}>
+      <div className="container mx-auto px-4">
+        {currentNews.map((news, index) => (
+          <NewsItem
+            key={index}
+            title={news.title}
+            date={news.date}
+            comments={news.comments}
+            excerpt={news.excerpt}
+            imageUrl={news.imageUrl}
+            link={news.link}
+          />
+        ))}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
         />
-      ))}
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={setCurrentPage}
-      />
-    </div>
+      </div>
+    </AnimatedSection>
   );
 };
 
