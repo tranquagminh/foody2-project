@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Custom styles for Swiper navigation buttons */
+.testimonial-slider .swiper-button-next,
+.testimonial-slider .swiper-button-prev {
+  color: #3cb815;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.testimonial-slider .swiper-button-next:after,
+.testimonial-slider .swiper-button-prev:after {
+  font-size: 20px;
+}
+
+.testimonial-slider .swiper-pagination-bullet-active {
+  background: #3cb815;
+}
+
+.bg-icon-pattern {
+  background-image: url('/images/backgrounds/bg-icon.png');
+  background-size: cover;
+}
+
+.bg-page-header {
+  background-image: url('/images/carousel/carousel-1.jpg');
+  background-size: cover;
+}
+
+.wow {
+  visibility: hidden;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
