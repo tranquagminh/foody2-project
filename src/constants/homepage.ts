@@ -190,7 +190,58 @@ export const productMenuItems = [
   ];
   
 export const knowledgeMenuItems = [
-    { title: 'Tin tức', href: '/blog' },
+    { title: 'Tin tức', href: '/kien-thuc/tin-tuc' },
     { title: 'Mẹo nấu ăn', href: '/cooking-tips' },
     { title: 'Dinh dưỡng', href: '/nutrition' },
   ];
+
+export const newsData = [
+  {
+    title: "Thủy canh tĩnh và động là gì? Giới thiệu kỹ thuật trồng thủy canh",
+    date: "26 Tháng 1, 2021",
+    comments: 0,
+    excerpt: "Thủy canh tĩnh và động được xem là 2 phương pháp thủy canh đang được sử dụng nhiều nhất hiện nay...",
+    imageUrl: "/images/blog/tin-tuc/cach-trong-hat-giong-rau-mong-toi-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Tác dụng và quy trình trồng 1 số loại nấm",
+    date: "25 Tháng 1, 2021",
+    comments: 0,
+    excerpt: "Khí hậu ở Việt Nam hiện nay là khí hậu vô cùng thích hợp để nấm sinh trưởng và phát triển...",
+    imageUrl: "/images/blog/tin-tuc/hat-giong-dau-ha-lan-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Mẹo chọn hạt giống Việt chất lượng cao, giá rẻ",
+    date: "29 Tháng 12, 2020",
+    comments: 0,
+    excerpt: "Hạt giống là yếu tố đầu tiên vô cùng quan trọng, quyết định sự sinh trưởng của cây trồng...",
+    imageUrl: "/images/blog/tin-tuc/hat-giong-xa-lach-xoan1-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Tác dụng và quy trình trồng 1 số loại nấm",
+    date: "25 Tháng 1, 2021",
+    comments: 0,
+    excerpt: "Khí hậu ở Việt Nam hiện nay là khí hậu vô cùng thích hợp để nấm sinh trưởng và phát triển...",
+    imageUrl: "/images/blog/tin-tuc/hat-giong-dau-ha-lan-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Tác dụng và quy trình trồng 1 số loại nấm",
+    date: "25 Tháng 1, 2021",
+    comments: 0,
+    excerpt: "Khí hậu ở Việt Nam hiện nay là khí hậu vô cùng thích hợp để nấm sinh trưởng và phát triển...",
+    imageUrl: "/images/blog/tin-tuc/hat-giong-dau-ha-lan-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Tác dụng và quy trình trồng 1 số loại nấm",
+    date: "25 Tháng 1, 2021",
+    comments: 0,
+    excerpt: "Khí hậu ở Việt Nam hiện nay là khí hậu vô cùng thích hợp để nấm sinh trưởng và phát triển...",
+    imageUrl: "/images/blog/tin-tuc/hat-giong-dau-ha-lan-330x240.jpg",
+    link: "#"
+  },
+];

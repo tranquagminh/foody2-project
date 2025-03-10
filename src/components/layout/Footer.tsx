@@ -15,7 +15,7 @@ const Footer = () => {
                 dy
             </h1>
             <p className="mb-4">
-              Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita
+            Chúng tôi mang đến những món ăn ngon và dịch vụ tuyệt vời. Hãy đến và trải nghiệm ẩm thực độc đáo tại Foody.
             </p>
             <div className="flex space-x-2 text-white">
               <Link href="#">
@@ -35,10 +35,10 @@ const Footer = () => {
 
           {/* Contact Section */}
           <div>
-            <h4 className="text-xl font-semibold mb-4 text-white">Address</h4>
+            <h4 className="text-xl font-semibold mb-4 text-white">Địa chỉ</h4>
             <p className="flex items-center mb-2">
               <span className="mr-3">📍</span>
-              123 Street, New York, USA
+              123 Đường ABC, Hồ Chí Minh, Việt Nam
             </p>
             <p className="flex items-center mb-2">
               <span className="mr-3">📞</span>
@@ -52,35 +52,35 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div>
-            <h4 className="text-xl font-semibold mb-4 text-white">Quick Links</h4>
+            <h4 className="text-xl font-semibold mb-4 text-white">Liên kết nhanh</h4>
             <div className="flex flex-col space-y-2">
               <Link href="#" className="flex gap-1 group">
                 <FontAwesomeIcon icon={faAngleRight} className="self-center w-4 h-4 mr-2 " />
-                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">About Us</span>
+                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Về chúng tôi</span>
               </Link>
               <Link href="#" className="flex gap-1 group">
                 <FontAwesomeIcon icon={faAngleRight} className="self-center w-4 h-4 mr-2 " />
-                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Contact Us</span>
+                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Liên hệ</span>
               </Link>
               <Link href="#" className="flex gap-1 group">
                 <FontAwesomeIcon icon={faAngleRight} className="self-center w-4 h-4 mr-2 " />
-                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Our Services</span>
+                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Dịch vụ của chúng tôi</span>
               </Link>
               <Link href="#" className="flex gap-1 group">
                 <FontAwesomeIcon icon={faAngleRight} className="self-center w-4 h-4 mr-2 " />
-                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Terms & Condition</span>
+                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Điều khoản & Điều kiện</span>
               </Link>
               <Link href="#" className="flex gap-1 group">
                 <FontAwesomeIcon icon={faAngleRight} className="self-center w-4 h-4 mr-2 " />
-                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Support</span>
+                <span className=" group-hover:text-white origin-left group-hover:scale-110 duration-300 transition-all">Hỗ trợ</span>
               </Link>
             </div>
           </div>
 
           {/* Newsletter Section */}
           <div>
-            <h4 className="text-xl font-semibold mb-4 text-white">Newsletter</h4>
-            <p className="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+            <h4 className="text-xl font-semibold mb-4 text-white">Bản tin</h4>
+            <p className="mb-4">Đăng ký để nhận thông tin mới nhất về các món ăn và ưu đãi đặc biệt.</p>
             <div className="relative">
               <input 
                 type="text" 
@@ -91,7 +91,7 @@ const Footer = () => {
                 type="button" 
                 className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-[#3cb815] text-white py-2 px-4 rounded hover:bg-[#2f9010] transition-colors duration-300"
               >
-                SignUp
+                Đăng ký
               </button>
             </div>
           </div>
@@ -103,7 +103,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-center text-center md:text-left">
             <div className="mb-2 md:mb-0">
-              © <Link href="#" className="hover:underline text-white">Your Site Name</Link>, All Right Reserved.
+              © <Link href="#" className="hover:underline text-white">Tên Trang Web Của Bạn</Link>, Bảo lưu mọi quyền.
             </div>
           </div>
         </div>
