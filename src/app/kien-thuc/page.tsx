@@ -1,9 +1,23 @@
+import PageHeader from '@/components/common/PageHeader'
+import BlogPage from '@/components/sections/knowledge/BlogPage'
+import SectionContainer from '@/components/shared/SectionContainer'
 import React from 'react'
 
-function page() {
+function KnowledgePage() {
   return (
-    <div>page</div>
+    <>
+      <PageHeader 
+          title='Kiến thức'
+          breadcrumbs={[
+              { label: 'Trang chủ', href: '/' },
+              { label: 'Kiến thức', href: '/kien-thuc',active: true }
+          ]}
+      />
+      <SectionContainer className="!py-0">
+          <BlogPage />
+      </SectionContainer>    
+    </>
   )
 }
 
-export default page
+export default KnowledgePage

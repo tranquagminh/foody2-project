@@ -71,7 +71,7 @@ const Header: React.FC = () => {
             {/* Main navigation */}
             <nav className={`flex px-4 lg:px-12 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-0'}`}>
                 <div className='flex'>
-                    <Link href="#" className='text-[40px] self-center'>
+                    <Link href="/" className='text-[40px] self-center'>
                         <h1 className='font-bold text-[#3cb815]'>F
                             <span className='text-[#f65005]'>oo</span>
                             dy
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
                             <DropdownMenu items={productMenuItems} />
                         </li>
                         <li className='group relative py-[25px] px-[15px] hover:text-[#3cb815] transition-colors'>
-                            <Link href="#">Kiến thức 
+                            <Link href={ROUTES.KNOWLEDGE}>Kiến thức 
                             <FontAwesomeIcon icon={faAngleDown} className='w-4 h-4 inline-block ml-1'/></Link>
                             <DropdownMenu items={knowledgeMenuItems} />
                         </li>
@@ -173,7 +173,7 @@ const Header: React.FC = () => {
                                 className="flex justify-between items-center"
                                 onClick={() => toggleSubMenu('knowledge')}
                             >
-                                <Link href="#">Kiến thức</Link>
+                                <Link href={ROUTES.KNOWLEDGE}>Kiến thức</Link>
                                 <FontAwesomeIcon icon={faAngleDown} className={`w-4 h-4 transition-transform duration-300 ${
                                     openSubMenu.includes('knowledge') ? 'rotate-180' : ''
                                 }`}/>

@@ -1,4 +1,3 @@
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import Image from 'next/image';
 
@@ -32,7 +31,6 @@ const CartItem = () => {
               </div>
             </div>
             
-            <FavoriteBorderIcon className="text-gray-400 cursor-pointer hover:text-red-500" />
           </div>
   
           {/* Quantity Controls & Price */}

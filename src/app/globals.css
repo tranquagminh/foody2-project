@@ -71,3 +71,8 @@ body {
 .fadeIn {
   animation-name: fadeIn;
 }
+
+.navbar-container {
+  position: relative;
+  z-index: 100;
+}

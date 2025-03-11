@@ -245,3 +245,46 @@ export const newsData = [
     link: "#"
   },
 ];
+
+export const blogPosts = [
+  {
+    title: "Thủy canh tĩnh và động là gì? Giới thiệu kỹ thuật trồng thủy canh",
+    date: "26 Tháng 1, 2021",
+    comments: 0,
+    excerpt: "Thủy canh tĩnh và động được xem là 2 phương pháp thủy canh đang được sử dụng nhiều nhất hiện nay...",
+    imageUrl: "/images/blog/tin-tuc/cach-trong-hat-giong-rau-mong-toi-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Kỹ thuật trồng rau thủy canh tại nhà cho người mới bắt đầu",
+    date: "15 Tháng 2, 2021",
+    comments: 5,
+    excerpt: "Trồng rau thủy canh tại nhà đang trở thành xu hướng được nhiều người yêu thích với nhiều ưu điểm vượt trội...",
+    imageUrl: "/images/blog/che-bien-ca-tra-xuat-khau-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Top 10 loại rau dễ trồng nhất trong hệ thống thủy canh",
+    date: "3 Tháng 3, 2021",
+    comments: 12,
+    excerpt: "Không phải loại rau nào cũng phù hợp với phương pháp thủy canh. Hãy cùng tìm hiểu những loại rau dễ trồng nhất...",
+    imageUrl: "/images/blog/Gia-gao-Viet-Nam-giam-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Xử lý sâu bệnh trong vườn thủy canh hữu cơ",
+    date: "17 Tháng 4, 2021",
+    comments: 8,
+    excerpt: "Sâu bệnh là vấn đề thường gặp khi trồng rau thủy canh. Bài viết này sẽ hướng dẫn cách xử lý sâu bệnh hiệu quả...",
+    imageUrl: "/images/blog/ra-mat-gao-ST25-o-Tokyo-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Cách pha chế dung dịch dinh dưỡng cho cây trồng thủy canh",
+    date: "10 Tháng 5, 2021",
+    comments: 15,
+    excerpt: "Dung dịch dinh dưỡng đóng vai trò quan trọng trong việc phát triển của cây trồng thủy canh. Tìm hiểu cách pha chế...",
+    imageUrl: "/images/blog/Thit-va-rau-cu-tai-TPHCM-dua-nhau-tang-gia-330x240.jpeg",
+    link: "#"
+  }
+];

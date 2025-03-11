@@ -8,7 +8,6 @@ const SearchBar = () => {
   const searchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Handle click outside to close
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
@@ -20,7 +19,6 @@ const SearchBar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Focus input when opened
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
@@ -28,31 +26,31 @@ const SearchBar = () => {
   }, [isOpen]);
 
   const handleSearchClick = () => {
-    setIsOpen(true);
+    setIsOpen(!isOpen); // Thêm toggle để đóng/mở
   };
 
   return (
-    <div ref={searchRef} className="relative top-[-2px]">
+    <div ref={searchRef} className="relative h-8">
       {/* Search Icon */}
       <button
         onClick={handleSearchClick}
         className={`bg-white w-8 h-8 rounded-full flex items-center justify-center
           hover:bg-[#3cb815] hover:text-white transition-all
-          ${isOpen ? 'opacity-0' : 'opacity-100'}`}
+          `}
       >
         <FontAwesomeIcon icon={faSearch} className="w-4 h-4" />
       </button>
 
-      {/* Search Input Container */}
+      {/* Search Input Container - Điều chỉnh vị trí và z-index */}
       <div
-        className={`absolute right-0 top-1/2 -translate-y-1/2 
-          bg-white rounded-full shadow-lg overflow-hidden
-          transition-all duration-300 ease-in-out
+        className={`absolute right-0 top-[calc(100%+10px)]  
+          bg-white rounded-lg shadow-lg overflow-hidden
+          transition-all duration-300 ease-in-out z-[1000] 
           ${isOpen 
             ? 'w-[300px] opacity-100 visible' 
             : 'w-0 opacity-0 invisible'}`}
       >
-        <div className="flex items-center px-4 h-10">
+        <div className="flex items-center px-4 h-12">
           <input
             ref={inputRef}
             type="text"
@@ -67,15 +65,13 @@ const SearchBar = () => {
           </button>
         </div>
 
-        {/* Search Results - Optional */}
+        {/* Điều chỉnh vị trí results */}
         {isOpen && (
           <div className="absolute top-full left-0 right-0 bg-white shadow-lg rounded-b-lg mt-1 max-h-[300px] overflow-auto">
             <div className="p-2">
-              {/* Example Results */}
               <div className="text-sm text-gray-500 p-2">
                 Start typing to search...
               </div>
-              {/* You can map through actual results here */}
             </div>
           </div>
         )}

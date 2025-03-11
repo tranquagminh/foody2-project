@@ -13,9 +13,9 @@ const NewsItem: React.FC<NewsItemProps> = ({
   title, date, comments, excerpt, imageUrl, link 
 }) => {
   return (
-    <div className="flex border-b border-gray-200 py-4">
-      <div className="w-1/3 px-4">
-        <a href={link} className="relative group block">
+    <div className="flex flex-wrap border-b group border-gray-200 py-4">
+      <div className="lg:w-1/3 w-full px-4 mb-4 lg:mb-0">
+        <a href={link} className="relative block">
           {/* Ảnh gốc */}
           <Image
             src={imageUrl}
@@ -38,7 +38,7 @@ const NewsItem: React.FC<NewsItemProps> = ({
           <span className="absolute top-0 left-0 w-[3px] h-full bg-[#115036] transform scale-y-0 group-hover:scale-y-100 origin-bottom transition-transform duration-300"></span>
         </a>
       </div>
-      <div className="w-2/3 px-4">
+      <div className="lg:w-2/3 w-full px-4 pt-">
         <div className="text-gray-500 text-sm mb-5">
           <span className="mr-4">📅 {date}</span>
           <span>💬 {comments}</span>
