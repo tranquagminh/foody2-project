@@ -44,6 +44,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'vegetable',
+    sku: 'SB93477201174'
   },
   {
     id: 2,
@@ -52,6 +53,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'vegetable',
+    sku: 'SB93477201174'
   },
   {
     id: 3,
@@ -60,6 +62,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'vegetable',
+    sku: 'SB93477201174'
   },
   {
     id: 4,
@@ -68,6 +71,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'fruits',
+    sku: 'SB93477201174'
   },
   {
     id: 5,
@@ -76,6 +80,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'fruits',
+    sku: 'SB93477201174'
   },
   {
     id: 6,
@@ -84,6 +89,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'vegetable',
+    sku: 'SB93477201174'
   },
   {
     id: 7,
@@ -92,6 +98,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'vegetable',
+    sku: 'SB93477201174'
   },
   {
     id: 8,
@@ -100,6 +107,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'fruits',
+    sku: 'SB93477201174'
   },
   {
     id: 9,
@@ -108,6 +116,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'fruits',
+    sku: 'SB93477201174'
   },
   {
     id: 10,
@@ -116,6 +125,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'fruits',
+    sku: 'SB93477201174'
   },
   {
     id: 11,
@@ -124,6 +134,7 @@ export const products = [
     price: 19.00,
     oldPrice: 29.00,
     category: 'fresh',
+    sku: 'SB93477201174'
   },
 ];
 

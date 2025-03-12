@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 interface ProductCardProps {
+  id: number;
   image: string;
   title: string;
   price: number;
@@ -11,7 +12,7 @@ interface ProductCardProps {
   delay: number;
 }
 
-const ProductCard = ({ image, title, price, oldPrice, delay }: ProductCardProps) => {
+const ProductCard = ({id, image, title, price, oldPrice, delay }: ProductCardProps) => {
   return (
     <div className="wow fadeInUp" data-wow-delay={`${delay}s`}>
       <div className="bg-white">
@@ -26,14 +27,14 @@ const ProductCard = ({ image, title, price, oldPrice, delay }: ProductCardProps)
           <div className="bg-[#F65005] rounded text-white absolute left-0 top-0 m-4 py-1 px-3">Mới</div>
         </div>
         <div className="text-center p-4">
-          <Link href="#" className="block text-xl font-semibold mb-2 hover:text-[#3cb815] transition-colors">
+          <Link href={`/san-pham/${id}`} className="block text-xl font-semibold mb-2 hover:text-[#3cb815] transition-colors">
             {title}
           </Link>
           <span className="text-[#3cb815] mr-1">${price.toFixed(2)}</span>
           <span className="text-gray-500 line-through">${oldPrice.toFixed(2)}</span>
         </div>
         <div className="flex border-t border-[#dee2e6]">
-          <Link href="#" className="w-1/2 text-center border-r border-[#dee2e6] py-2 hover:text-[#3cb815] transition-colors">
+          <Link href={`/san-pham/${id}`} className="w-1/2 text-center border-r border-[#dee2e6] py-2 hover:text-[#3cb815] transition-colors">
             <FontAwesomeIcon icon={faEye} className="text-[#3cb815] mr-2" />
             Chi tiết
           </Link>
