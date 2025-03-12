@@ -1,6 +1,10 @@
+"use client"
 import { Button } from "@mui/material";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const CheckoutSummary = () => {
+  const path = usePathname();
   return (
     <div className="bg-white p-6 rounded-lg border border-[#e2e8f0]">
       <h2 className="font-semibold mb-6">Checkout Details</h2>
@@ -50,20 +54,23 @@ const CheckoutSummary = () => {
           <span className="font-semibold">Order Total :</span>
           <span className="font-semibold">$605.00</span>
         </div>
-
-        <Button
-          fullWidth
-          variant="contained"
-          sx={{
-            borderRadius: '6px',
-            backgroundColor: '#3cb815',
-            ":hover": {
-              backgroundColor: '#2da012'
-            }
-          }}
-        >
-          Continue to Checkout
-        </Button>
+        {!path.includes("/thanh-toan") && (
+          <Button
+            fullWidth
+            variant="contained"
+            sx={{
+              borderRadius: '6px',
+              backgroundColor: '#3cb815',
+              ":hover": {
+                backgroundColor: '#2da012'
+              }
+            }}
+          >
+            <Link href="/thanh-toan">
+              Continue to Checkout
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   );
