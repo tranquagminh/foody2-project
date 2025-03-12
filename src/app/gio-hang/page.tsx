@@ -39,18 +39,6 @@ export default function CartPage() {
             >
               Go To Back
             </Button>
-            <Button
-              variant="contained"
-              sx={{
-                borderRadius: '6px',
-                backgroundColor: '#3cb815',
-                ":hover": {
-                  backgroundColor: '#2da012'
-                }
-              }}
-            >
-              Checkout
-            </Button>
           </div>
         </Grid>
 

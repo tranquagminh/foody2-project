@@ -25,7 +25,7 @@ export default function OrderSummary() {
           className="w-full bg-[#3cb815] text-white py-3 rounded-md hover:bg-[#2da012] transition"
           type="submit"
         >
-          Pay Now - $40.00
+          Pay Now - $605.00
         </button>
         
         <p className="text-sm text-gray-500 mt-4 flex items-center">

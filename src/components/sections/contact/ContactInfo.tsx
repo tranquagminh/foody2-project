@@ -7,7 +7,7 @@ const ContactInfo = () => {
     <div className="wow fadeInUp bg-[#3cb815] text-white flex flex-col justify-center h-full p-8 rounded-lg" data-wow-delay="0.1s">
       <div className="space-y-8">
         <div>
-          <h5 className="text-xl font-semibold mb-2">Call Us</h5>
+          <h5 className="text-xl font-semibold mb-2">Gọi Cho Chúng Tôi</h5>
           <p className="flex items-center">
             <FontAwesomeIcon icon={faPhone} className="w-4 h-4 mr-3" />
             +012 345 67890
@@ -15,7 +15,7 @@ const ContactInfo = () => {
         </div>
 
         <div>
-          <h5 className="text-xl font-semibold mb-2">Email Us</h5>
+          <h5 className="text-xl font-semibold mb-2">Email Cho Chúng Tôi</h5>
           <p className="flex items-center">
             <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4 mr-3" />
             info@example.com
@@ -23,7 +23,7 @@ const ContactInfo = () => {
         </div>
 
         <div>
-          <h5 className="text-xl font-semibold mb-2">Office Address</h5>
+          <h5 className="text-xl font-semibold mb-2">Địa Chỉ Văn Phòng</h5>
           <p className="flex items-center">
             <FontAwesomeIcon icon={faMapMarkerAlt} className="w-4 h-4 mr-3" />
             123 Street, New York, USA
@@ -31,7 +31,7 @@ const ContactInfo = () => {
         </div>
 
         <div>
-          <h5 className="text-xl font-semibold mb-4">Follow Us</h5>
+          <h5 className="text-xl font-semibold mb-4">Theo Dõi Chúng Tôi</h5>
           <div className="flex space-x-2">
             {[
               { icon: faTwitter, href: '#' },
