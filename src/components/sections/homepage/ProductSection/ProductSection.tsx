@@ -68,7 +68,7 @@ const ProductSection = () => {
         {/* Header */}
         <div className="lg:max-w-[500px] mb-8 lg:mb-0">
           <SectionTitle 
-            title="Our Products"
+            title="Sản phẩm của chúng tôi"
             description="Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo."
             className="text-start"
           />
@@ -82,21 +82,21 @@ const ProductSection = () => {
                 ${activeTab === 'vegetable' ? 'bg-[#3cb815] text-white' : 'text-[#3cb815] hover:bg-[#3cb815] hover:text-white'}`}
               onClick={() => handleTabChange('vegetable')}
             >
-              Vegetable
+              Rau củ
             </button>
             <button 
               className={`px-6 py-2 rounded-full border-2 border-[#3cb815] transition-colors
                 ${activeTab === 'fruits' ? 'bg-[#3cb815] text-white' : 'text-[#3cb815] hover:bg-[#3cb815] hover:text-white'}`}
               onClick={() => handleTabChange('fruits')}
             >
-              Fruits
+              Trái cây
             </button>
             <button 
               className={`px-6 py-2 rounded-full border-2 border-[#3cb815] transition-colors
                 ${activeTab === 'fresh' ? 'bg-[#3cb815] text-white' : 'text-[#3cb815] hover:bg-[#3cb815] hover:text-white'}`}
               onClick={() => handleTabChange('fresh')}
             >
-              Fresh
+              Đồ tươi sống
             </button>
             {/* ... other tab buttons ... */}
           </div>

@@ -135,7 +135,7 @@ const Header: React.FC = () => {
                 {/* Mobile Menu */}
                 <div className={`
                     lg:hidden fixed top-[60px] left-0 w-full bg-white shadow-lg
-                    transition-all duration-300 ease-in-out
+                    transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-60px)]
                     ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
                 `}>
                     <ul className='py-4'>

@@ -23,7 +23,7 @@ const ProductCard = ({ image, title, price, oldPrice, delay }: ProductCardProps)
             height={300}
             className="w-full transition-transform duration-300 hover:scale-105"
           />
-          <div className="bg-[#F65005] rounded text-white absolute left-0 top-0 m-4 py-1 px-3">New</div>
+          <div className="bg-[#F65005] rounded text-white absolute left-0 top-0 m-4 py-1 px-3">Mới</div>
         </div>
         <div className="text-center p-4">
           <Link href="#" className="block text-xl font-semibold mb-2 hover:text-[#3cb815] transition-colors">
@@ -35,11 +35,11 @@ const ProductCard = ({ image, title, price, oldPrice, delay }: ProductCardProps)
         <div className="flex border-t border-[#dee2e6]">
           <Link href="#" className="w-1/2 text-center border-r border-[#dee2e6] py-2 hover:text-[#3cb815] transition-colors">
             <FontAwesomeIcon icon={faEye} className="text-[#3cb815] mr-2" />
-            View detail
+            Chi tiết
           </Link>
           <Link href="#" className="w-1/2 text-center py-2 hover:text-[#3cb815] transition-colors">
             <FontAwesomeIcon icon={faShoppingBag} className="text-[#3cb815] mr-2" />
-            Add to cart
+            Thêm vào giỏ hàng
           </Link>
         </div>
       </div>

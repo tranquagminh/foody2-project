@@ -9,17 +9,17 @@ function FeaturesSection() {
   return (
     <SectionContainer className="bg-[#F7F8FC] bg-icon-pattern bg-center bg-repeat bg-contain mt-20 py-24">
         <AnimatedSection animation="fadeInUp" delay={0.1}>
-            {/* Section Header */}
+            {/* Tiêu đề phần */} 
             <div className="text-center mx-auto mb-16 wow fadeInUp max-w-[500px]">
-                <h1 className="text-4xl font-bold mb-4">Our Features</h1>
+                <h1 className="text-4xl font-bold mb-4">Tính Năng Của Chúng Tôi</h1>
                 <p className="text-gray-600">
-                    Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.
+                    Đây là mô tả ngắn về các tính năng của chúng tôi. Chúng tôi cam kết mang đến sản phẩm chất lượng cao và an toàn.
                 </p>
             </div>
         </AnimatedSection>
         
 
-            {/* Features Grid */}
+            {/* Lưới các tính năng */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature,index) => (
             <AnimatedSection 
@@ -41,7 +41,7 @@ function FeaturesSection() {
                     {feature.description}
                 </p>
                 <Button href="#" variant="outline">
-                    Read More
+                    Xem Thêm
                 </Button>
                 </div>
             </div>

@@ -23,7 +23,7 @@ const TestimonialSection = () => {
       {/* Section Header */}
       <div className="max-w-[500px] mx-auto mb-10">
           <SectionTitle 
-            title="Customer Review"
+            title="Nhận xét từ khách hàng"
             description="Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo."
             className="text-center"
           />

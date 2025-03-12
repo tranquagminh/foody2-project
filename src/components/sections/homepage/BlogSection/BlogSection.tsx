@@ -9,7 +9,7 @@ const BlogSection = () => {
       {/* Section Header */}
       <div className="max-w-[500px] mx-auto mb-16">
           <SectionTitle 
-            title="Latest Blog"
+            title="Blog của chúng tôi"
             description="Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo."
             className="text-center"
           />

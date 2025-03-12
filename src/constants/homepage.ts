@@ -13,7 +13,7 @@ export const blogs = [
   {
     id: 1,
     image: '/images/blog/blog-1.jpg',
-    title: 'How to cultivate organic fruits and vegetables in own firm',
+    title: 'Cách Trồng Rau Quả Hữu Cơ Tại Nhà',
     author: 'Admin',
     date: '01 Jan, 2045',
     delay: 0.1
@@ -21,7 +21,7 @@ export const blogs = [
   {
     id: 2,
     image: '/images/blog/blog-2.jpg',
-    title: 'How to cultivate organic fruits and vegetables in own firm',
+    title: 'Bí Quyết Chọn Thực Phẩm Tươi Sạch Cho Gia Đình',
     author: 'Admin',
     date: '01 Jan, 2045',
     delay: 0.3
@@ -29,7 +29,7 @@ export const blogs = [
   {
     id: 3,
     image: '/images/blog/blog-3.jpg',
-    title: 'How to cultivate organic fruits and vegetables in own firm',
+    title: 'Lợi Ích Của Sản Phẩm Hữu Cơ Đối Với Sức Khỏe',
     author: 'Admin',
     date: '01 Jan, 2045',
     delay: 0.5
@@ -37,147 +37,147 @@ export const blogs = [
 ];
 
 export const products = [
-    {
-      id: 1,
-      image: '/images/products/product-1.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable',
-    },
-    {
-      id: 2,
-      image: '/images/products/product-2.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable',
-    },
-    {
-      id: 3,
-      image: '/images/products/product-3.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable'
-    },
-    {
-      id: 4,
-      image: '/images/products/product-4.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable'
-    },
-    {
-      id: 5,
-      image: '/images/products/product-5.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable'
-    },
-    {
-      id: 6,
-      image: '/images/products/product-6.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable'
-    },
-    {
-      id: 7,
-      image: '/images/products/product-7.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable'
-    },
-    {
-      id: 8,
-      image: '/images/products/product-8.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable'
-    },
-    {
-      id: 9,
-      image: '/images/products/product-8.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'vegetable'
-    },
-    {
-      id: 10,
-      image: '/images/products/product-8.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'fruits'
-    },
-    {
-      id: 11,
-      image: '/images/products/product-8.jpg',
-      title: 'Fresh Tomato',
-      price: 19.00,
-      oldPrice: 29.00,
-      category: 'fresh'
-    },
+  {
+    id: 1,
+    image: '/images/products/product-1.jpg',
+    title: 'Cà Chua Tươi',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'vegetable',
+  },
+  {
+    id: 2,
+    image: '/images/products/product-2.jpg',
+    title: 'Cà Rốt Tươi',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'vegetable',
+  },
+  {
+    id: 3,
+    image: '/images/products/product-3.jpg',
+    title: 'Bắp Cải Xanh',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'vegetable',
+  },
+  {
+    id: 4,
+    image: '/images/products/product-4.jpg',
+    title: 'Táo Đỏ',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'fruits',
+  },
+  {
+    id: 5,
+    image: '/images/products/product-5.jpg',
+    title: 'Chuối Chín',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'fruits',
+  },
+  {
+    id: 6,
+    image: '/images/products/product-6.jpg',
+    title: 'Khoai Tây Tươi',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'vegetable',
+  },
+  {
+    id: 7,
+    image: '/images/products/product-7.jpg',
+    title: 'Dưa Leo Xanh',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'vegetable',
+  },
+  {
+    id: 8,
+    image: '/images/products/product-8.jpg',
+    title: 'Cam Vàng',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'fruits',
+  },
+  {
+    id: 9,
+    image: '/images/products/product-8.jpg',
+    title: 'Kiwi Xanh',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'fruits',
+  },
+  {
+    id: 10,
+    image: '/images/products/product-8.jpg',
+    title: 'Nho Đen',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'fruits',
+  },
+  {
+    id: 11,
+    image: '/images/products/product-8.jpg',
+    title: 'Thịt Bò Tươi',
+    price: 19.00,
+    oldPrice: 29.00,
+    category: 'fresh',
+  },
 ];
 
 export const testimonials = [
-    {
-        id: 1,
-        image: '/images/testimonials/testimonial-1.jpg',
-        name: 'Client Name',
-        profession: 'Profession',
-        comment: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.'
-    },
-    {
-        id: 2,
-        image: '/images/testimonials/testimonial-2.jpg',
-        name: 'Client Name',
-        profession: 'Profession',
-        comment: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.'
-    },
-    {
-        id: 3,
-        image: '/images/testimonials/testimonial-3.jpg',
-        name: 'Client Name',
-        profession: 'Profession',
-        comment: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.'
-    },
-    {
-        id: 4,
-        image: '/images/testimonials/testimonial-4.jpg',
-        name: 'Client Name',
-        profession: 'Profession',
-        comment: 'Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.'
-    },
+  {
+    id: 1,
+    image: '/images/testimonials/testimonial-1.jpg',
+    name: 'Nguyễn Thị Lan',
+    profession: 'Nhà báo ẩm thực',
+    comment: 'Tôi rất ấn tượng với chất lượng sản phẩm tươi sạch tại đây. Giao diện website dễ sử dụng và sản phẩm luôn đúng như mô tả!',
+  },
+  {
+    id: 2,
+    image: '/images/testimonials/testimonial-2.jpg',
+    name: 'Trần Văn Hùng',
+    profession: 'Chủ quán ăn',
+    comment: 'Sản phẩm hữu cơ rất chất lượng, giao hàng nhanh chóng. Tôi sẽ tiếp tục ủng hộ và giới thiệu cho bạn bè!',
+  },
+  {
+    id: 3,
+    image: '/images/testimonials/testimonial-3.jpg',
+    name: 'Phạm Thị Mai',
+    profession: 'Nội trợ',
+    comment: 'Mua sắm tại đây giúp tôi tiết kiệm thời gian và yên tâm về nguồn gốc thực phẩm. Rất hài lòng với dịch vụ!',
+  },
+  {
+    id: 4,
+    image: '/images/testimonials/testimonial-4.jpg',
+    name: 'Lê Quốc Anh',
+    profession: 'Doanh nhân',
+    comment: 'Chất lượng sản phẩm vượt mong đợi, giao diện website thân thiện. Đây là địa chỉ đáng tin cậy để mua thực phẩm!',
+  },
 ];
 
 export const features = [
     {
       id: 1,
       icon: "/images/icons/icon-1.png",
-      title: "Natural Process",
-      description: "Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.",
+      title: "Quy Trình Tự Nhiên",
+      description: "Quy trình tự nhiên giúp đảm bảo sản phẩm giữ được chất lượng tốt nhất, an toàn và thân thiện với môi trường.",
       delay: "0.1s",
     },
     {
       id: 2,
       icon: "/images/icons/icon-2.png",
-      title: "Organic Products",
-      description: "Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.",
+      title: "Sản Phẩm Hữu Cơ",
+      description: "Tất cả sản phẩm đều được sản xuất từ nguyên liệu hữu cơ, không chứa hóa chất độc hại, an toàn cho sức khỏe.",
       delay: "0.3s",
     },
     {
       id: 3,
       icon: "/images/icons/icon-3.png",
-      title: "Biologically Safe",
-      description: "Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed vero dolor duo.",
+      title: "An Toàn Sinh Học",
+      description: "Sản phẩm được kiểm định để đảm bảo an toàn sinh học, phù hợp với tiêu chuẩn cao nhất về sức khỏe và môi trường.",
       delay: "0.5s",
     },
   ];
