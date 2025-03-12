@@ -13,7 +13,10 @@ interface BlogCardProps {
 
 const BlogCard = ({ image, title, author, date, delay }: BlogCardProps) => {
   return (
-    <div className="wow fadeInUp" data-wow-delay={`${delay}s`}>
+    <div 
+      className="wow fadeInUp h-full flex flex-col" 
+      data-wow-delay={`${delay}s`}
+    >
       <div className="overflow-hidden">
         <Image
           src={image}
@@ -23,14 +26,14 @@ const BlogCard = ({ image, title, author, date, delay }: BlogCardProps) => {
           className="w-full hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <div className="bg-[#f7f8fc] p-6">
-        <Link 
-          href="#" 
+      <div className="bg-[#f7f8fc] p-6 flex flex-col flex-grow">
+        <Link
+          href="#"
           className="block text-xl font-semibold mb-4 hover:text-[#3cb815] transition-colors line-clamp-2 font-lora"
         >
           {title}
         </Link>
-        <div className="flex items-center text-gray-500 border-t pt-4">
+        <div className="flex items-center text-gray-500 border-t pt-4 mt-auto">
           <span className="flex items-center mr-6">
             <FontAwesomeIcon icon={faUser} className="text-[#3cb815] mr-2" />
             {author}

@@ -18,14 +18,15 @@ const BlogSection = () => {
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog) => (
-            <BlogCard
-              key={blog.id}
-              image={blog.image}
-              title={blog.title}
-              author={blog.author}
-              date={blog.date}
-              delay={blog.delay}
-            />
+            <div key={blog.id} className="h-full">
+              <BlogCard
+                image={blog.image}
+                title={blog.title}
+                author={blog.author}
+                date={blog.date}
+                delay={blog.delay}
+              />
+            </div>
           ))}
         </div>
     </SectionContainer>
