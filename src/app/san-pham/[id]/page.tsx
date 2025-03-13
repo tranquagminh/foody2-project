@@ -6,13 +6,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
 interface ProductDetailProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 } 
 
-const ProductDetail = async ({ params }: ProductDetailProps) => {
-  const id = await params.id;
+const ProductDetail = async (props: ProductDetailProps) => {
+  const params = await props.params;
+  const id = params.id;
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
