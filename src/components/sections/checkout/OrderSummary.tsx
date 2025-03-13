@@ -31,11 +31,6 @@ const OrderSummary = () => {
         ))}
         
         <div className="flex justify-between py-3 border-t">
-          <div className="font-medium">Subtotal</div>
-          <div>{subtotal.toLocaleString()}đ</div>
-        </div>
-        
-        <div className="flex justify-between py-3 border-t">
           <div className="font-medium">Total</div>
           <div className="font-bold">{total.toLocaleString()}đ</div>
         </div>
