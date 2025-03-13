@@ -10,7 +10,7 @@ const categoryMapping: Record<string, string> = {
     'thuc-pham-tuoi': 'fresh'
   };
 
-async function CategoryProduct({ params }: { params: { category: string } }) {
+async function CategoryProduct({ params }: { params: Promise<{ category: string }> }) {
     const {category} = await params;
     const categoryValue = categoryMapping[category];
   

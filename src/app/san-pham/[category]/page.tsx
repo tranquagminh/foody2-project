@@ -3,7 +3,7 @@ import PageHeader from '@/components/common/PageHeader';
 import CategoryProduct from '@/components/sections/product/category/CategoryProduct';
 import SectionContainer from '@/components/shared/SectionContainer';
 
-export default async function CategoryPage({ params }: { params: { category: string } }) {
+export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
     const {category} = await params;
   return (
     <>
