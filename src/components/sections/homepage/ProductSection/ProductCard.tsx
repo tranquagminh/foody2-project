@@ -30,8 +30,12 @@ const ProductCard = ({id, image, title, price, oldPrice, delay }: ProductCardPro
           <Link href={`/san-pham/${id}`} className="block text-xl font-semibold mb-2 hover:text-[#3cb815] transition-colors">
             {title}
           </Link>
-          <span className="text-[#3cb815] mr-1">${price.toFixed(2)}</span>
-          <span className="text-gray-500 line-through">${oldPrice.toFixed(2)}</span>
+          <span className="text-2xl font-bold text-green-700">{price.toLocaleString()}đ</span>
+          {oldPrice && (
+            <span className="ml-2 text-gray-500 line-through">
+              {oldPrice.toLocaleString()}đ
+            </span>
+          )}
         </div>
         <div className="flex border-t border-[#dee2e6]">
           <Link href={`/san-pham/${id}`} className="w-1/2 text-center border-r border-[#dee2e6] py-2 hover:text-[#3cb815] transition-colors">

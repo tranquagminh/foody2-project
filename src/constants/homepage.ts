@@ -41,8 +41,8 @@ export const products = [
     id: 1,
     image: '/images/products/product-1.jpg',
     title: 'Cà Chua Tươi',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'vegetable',
     sku: 'SB93477201174'
   },
@@ -50,8 +50,8 @@ export const products = [
     id: 2,
     image: '/images/products/product-2.jpg',
     title: 'Cà Rốt Tươi',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'vegetable',
     sku: 'SB93477201174'
   },
@@ -59,8 +59,8 @@ export const products = [
     id: 3,
     image: '/images/products/product-3.jpg',
     title: 'Bắp Cải Xanh',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'vegetable',
     sku: 'SB93477201174'
   },
@@ -68,8 +68,8 @@ export const products = [
     id: 4,
     image: '/images/products/product-4.jpg',
     title: 'Táo Đỏ',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'fruits',
     sku: 'SB93477201174'
   },
@@ -77,8 +77,8 @@ export const products = [
     id: 5,
     image: '/images/products/product-5.jpg',
     title: 'Chuối Chín',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'fruits',
     sku: 'SB93477201174'
   },
@@ -86,8 +86,8 @@ export const products = [
     id: 6,
     image: '/images/products/product-6.jpg',
     title: 'Khoai Tây Tươi',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'vegetable',
     sku: 'SB93477201174'
   },
@@ -95,8 +95,8 @@ export const products = [
     id: 7,
     image: '/images/products/product-7.jpg',
     title: 'Dưa Leo Xanh',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'vegetable',
     sku: 'SB93477201174'
   },
@@ -104,8 +104,8 @@ export const products = [
     id: 8,
     image: '/images/products/product-8.jpg',
     title: 'Cam Vàng',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'fruits',
     sku: 'SB93477201174'
   },
@@ -113,8 +113,8 @@ export const products = [
     id: 9,
     image: '/images/products/product-8.jpg',
     title: 'Kiwi Xanh',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'fruits',
     sku: 'SB93477201174'
   },
@@ -122,8 +122,8 @@ export const products = [
     id: 10,
     image: '/images/products/product-8.jpg',
     title: 'Nho Đen',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'fruits',
     sku: 'SB93477201174'
   },
@@ -131,8 +131,8 @@ export const products = [
     id: 11,
     image: '/images/products/product-8.jpg',
     title: 'Thịt Bò Tươi',
-    price: 19.00,
-    oldPrice: 29.00,
+    price: 190000,
+    oldPrice: 290000,
     category: 'fresh',
     sku: 'SB93477201174'
   },
@@ -194,10 +194,9 @@ export const features = [
   ];
 
 export const productMenuItems = [
-    { title: 'Rau củ', href: '/products/vegetables' },
-    { title: 'Trái cây', href: '/products/fruits' },
-    { title: 'Đồ khô', href: '/products/dry-foods' },
-    { title: 'Thực phẩm tươi', href: '/products/fresh-foods' },
+    { title: 'Rau củ', href: '/san-pham/rau-cu' },
+    { title: 'Trái cây', href: '/san-pham/trai-cay' },
+    { title: 'Thực phẩm tươi', href: '/san-pham/thuc-pham-tuoi' },
   ];
   
 export const knowledgeMenuItems = [

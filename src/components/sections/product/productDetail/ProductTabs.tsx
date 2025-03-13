@@ -1,4 +1,5 @@
 "use client";
+import AnimatedSection from '@/components/shared/AnimatedSection';
 import Image from 'next/image';
 import { useState } from 'react';
 // Client component for tabs with useState
@@ -14,7 +15,7 @@ interface Product {
     const [activeTab, setActiveTab] = useState('description');
   
     return (
-      <div>
+      <AnimatedSection animation="fadeInUp" delay={0.1}>
         {/* Tab Headers */}
         <div className="border-b border-gray-200">
           <div className="flex">
@@ -26,7 +27,7 @@ interface Product {
               }`}
               onClick={() => setActiveTab('description')}
             >
-              DESCRIPTION
+              MÔ TẢ
             </button>
             <button
               className={`py-4 px-6 font-medium text-sm uppercase ${
@@ -36,7 +37,7 @@ interface Product {
               }`}
               onClick={() => setActiveTab('additional')}
             >
-              ADDITIONAL INFORMATION
+              THÔNG TIN THÊM
             </button>
             <button
               className={`py-4 px-6 font-medium text-sm uppercase ${
@@ -46,7 +47,7 @@ interface Product {
               }`}
               onClick={() => setActiveTab('reviews')}
             >
-              REVIEWS (0)
+              ĐÁNH GIÁ (0)
             </button>
           </div>
         </div>
@@ -55,7 +56,7 @@ interface Product {
         <div className="border-l border-r border-b border-gray-200 bg-white p-6">
           {activeTab === 'description' && (
             <div>
-              <h2 className="text-xl font-semibold mb-4">DESCRIPTION</h2>
+              <h2 className="text-xl font-semibold mb-4">MÔ TẢ</h2>
               
               {product.id === 1 && (
                 <>
@@ -179,7 +180,7 @@ interface Product {
             </div>
           )}
         </div>
-      </div>
+      </AnimatedSection>
     );
   };
 export default ProductTabs;
