@@ -5,10 +5,10 @@ import ProductTabs from '@/components/sections/product/productDetail/ProductTabs
 import ProductInfo from '@/components/sections/product/productDetail/ProductInfo';
 
 interface ProductDetailProps {
-  params: {
+  params: Promise<{
     category: string;
     slug: string;
-  };
+  }>;
 }
 
 const ProductDetail = async (props: ProductDetailProps) => {
