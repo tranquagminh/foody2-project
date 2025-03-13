@@ -31,7 +31,7 @@ const ProductDetail = async (props: ProductDetailProps) => {
             breadcrumbs={[
                 { label: 'Trang chủ', href: '/' },
                 { label: 'Sản phẩm', href: '/san-pham' },
-                { label: product.category, href: `/san-pham/${product.id}`,active: true }
+                { label: product.title, href: `/san-pham/${product.id}`,active: true }
             ]}
 
       />

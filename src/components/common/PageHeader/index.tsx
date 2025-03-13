@@ -29,11 +29,11 @@ const PageHeader = ({ title, breadcrumbs }: PageHeaderProps) => {
                 <li key={index} className="flex items-center">
                   {index > 0 && <span className="mx-2 text-gray-400">/</span>}
                   {item.active ? (
-                    <span className="text-[#3cb815]">{item.label}</span>
+                    <span className="text-[#3cb815] uppercase">{item.label}</span>
                   ) : (
                     <Link 
                       href={item.href}
-                      className="text-gray-600 hover:text-[#3cb815] transition-colors"
+                      className="text-gray-600 hover:text-[#3cb815] transition-colors uppercase"
                     >
                       {item.label}
                     </Link>
