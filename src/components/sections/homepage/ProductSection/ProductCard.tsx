@@ -10,9 +10,17 @@ interface ProductCardProps {
   price: number;
   oldPrice: number;
   delay: number;
+  category: string;
 }
 
-const ProductCard = ({id, image, title, price, oldPrice, delay }: ProductCardProps) => {
+const categoryMapping: Record<string, string> = {
+  'vegetable': 'rau-cu',
+  'fruits': 'trai-cay',
+  'fresh': 'thuc-pham-tuoi'
+};
+
+const ProductCard = ({id, image, title, price, oldPrice, delay, category }: ProductCardProps) => {
+  const categoryValue = categoryMapping[category];
   return (
     <div className="wow fadeInUp" data-wow-delay={`${delay}s`}>
       <div className="bg-white">
@@ -38,7 +46,7 @@ const ProductCard = ({id, image, title, price, oldPrice, delay }: ProductCardPro
           )}
         </div>
         <div className="flex border-t border-[#dee2e6]">
-          <Link href={`/san-pham/${id}`} className="w-1/2 text-center border-r border-[#dee2e6] py-2 hover:text-[#3cb815] transition-colors">
+          <Link href={`/san-pham/${categoryValue}/${id}`} className="w-1/2 text-center border-r border-[#dee2e6] py-2 hover:text-[#3cb815] transition-colors">
             <FontAwesomeIcon icon={faEye} className="text-[#3cb815] mr-2" />
             Chi tiết
           </Link>
