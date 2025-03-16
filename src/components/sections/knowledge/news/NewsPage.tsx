@@ -1,17 +1,60 @@
 "use client"
 import { useEffect, useRef, useState } from 'react';
 import NewsItem from './NewsItem';
-import { newsData } from '@/constants/homepage';
+import { newsData, breedingPosts, WormData } from '@/constants/homepage';
 import Pagination from '@/components/shared/Pagination';
 import AnimatedSection from '@/components/shared/AnimatedSection';
+import { useParams } from 'next/navigation';
 
 const ITEMS_PER_PAGE = 5;
 
+interface Post {
+  title: string;
+  date: string;
+  comments: number;
+  excerpt: string;
+  imageUrl: string;
+  link: string;
+}
+
+interface ContentConfig {
+  data: Post[];
+  title: string;
+}
+
+interface DataMappingType {
+  [key: string]: ContentConfig;
+}
+
+const DATA_MAPPING: DataMappingType = 
+  {
+    'tin-tuc': {
+      data: newsData,
+      title: 'Tin tức',
+    },
+    'meo-nau-an': {
+      data: breedingPosts,
+      title: 'Mẹo nấu ăn',
+    },
+    'dinh-duong': {
+      data: WormData,
+      title: 'Dinh dưỡng',
+    }
+  };
+
 const NewsPage = () => {
+  const params = useParams();
+  const slug = params.slug as string || 'tin-tuc';
+
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(newsData.length / ITEMS_PER_PAGE);
+
+  const contentConfig = DATA_MAPPING[slug] || DATA_MAPPING['tin-tuc'];
+  const posts = contentConfig.data;
+
+  const totalPages = Math.ceil(posts.length / ITEMS_PER_PAGE);
   const newsGridRef = useRef<HTMLDivElement>(null);
-  const currentNews = newsData.slice(
+
+  const currentNews = posts.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   );

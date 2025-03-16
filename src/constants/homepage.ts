@@ -201,8 +201,8 @@ export const productMenuItems = [
   
 export const knowledgeMenuItems = [
     { title: 'Tin tức', href: '/kien-thuc/tin-tuc' },
-    { title: 'Mẹo nấu ăn', href: '/cooking-tips' },
-    { title: 'Dinh dưỡng', href: '/nutrition' },
+    { title: 'Mẹo nấu ăn', href: '/kien-thuc/meo-nau-an' },
+    { title: 'Dinh dưỡng', href: '/kien-thuc/dinh-duong' },
   ];
 
 export const newsData = [
@@ -295,6 +295,92 @@ export const blogPosts = [
     comments: 15,
     excerpt: "Dung dịch dinh dưỡng đóng vai trò quan trọng trong việc phát triển của cây trồng thủy canh. Tìm hiểu cách pha chế...",
     imageUrl: "/images/blog/Thit-va-rau-cu-tai-TPHCM-dua-nhau-tang-gia-330x240.jpeg",
+    link: "#"
+  }
+];
+
+export const breedingPosts = [
+  {
+    title: "Kỹ thuật Chiết cành bằng nước CỰC thú vị đã thử nghiệm 1 tháng ra rễ",
+    date: "16 Tháng 12, 2021",
+    comments: 0,
+    excerpt: "Chiết cành bằng nước là kỹ thuật mới nhưng rất hiệu quả đã được nhiều người áp dụng thành công...",
+    imageUrl: "/images/blog/meo-nau-an/1kg-phan-npk-pha-bao-nhieu-lit-nuoc-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Cách giâm cành Hoa hồng đơn giản nhất đã thử nghiệm 90% thành công",
+    date: "13 Tháng 12, 2021",
+    comments: 0,
+    excerpt: "Nhân giống hoa hồng bằng cách giâm cành là phương pháp đơn giản nhất được nhiều chuyên gia chăm sóc cây cảnh chia sẻ...",
+    imageUrl: "/images/blog/meo-nau-an/cach-bon-npk-cho-cay-moi-trong-1-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Cách nhân giống Cây Trầu Bà để bàn đơn giản tại nhà",
+    date: "5 Tháng 10, 2020",
+    comments: 0,
+    excerpt: "Vốn là cây dễ thích nghi, lại có thể trồng cả trong đất hoặc thủy canh, nên việc nhân giống cây Trầu Bà khá đơn giản...",
+    imageUrl: "/images/blog/meo-nau-an/cay-bi-ngo-doc-vi-thua-dam-lan-kali-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "3 Kỹ thuật nhân giống Lan Hồ Điệp được chia sẻ từ chuyên gia",
+    date: "4 Tháng 10, 2020",
+    comments: 0,
+    excerpt: "Lan hồ điệp không chỉ đẹp về hình dáng, ngay cả màu sắc cũng đa dạng và bắt mắt vô cùng...",
+    imageUrl: "/images/blog/meo-nau-an/phan-bon-kali-nitrat-kno3-330x240.jpg",
+    link: "#"
+  }
+];
+
+export const WormData = [
+  {
+    title: "8 Thuốc trị bệnh Rệp Sáp hiệu quả cho cây trồng",
+    date: "11 Tháng 10, 2021",
+    comments: 0,
+    excerpt: "Rệp sáp thường tấn công trên nhiều loại cây như hoa hồng, sắn, cà phê... Mặc dù có thể xử lý dễ dàng bằng các thuốc đặc trị hoặc sử dụng thuốc sinh học hay thuốc tự chế...",
+    imageUrl: "/images/blog/dinh-duong/benh-thoi-goc-bap-cai-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "6 Nguyên nhân cây Mai bị vàng lá và cách chăm sóc hợp lý",
+    date: "7 Tháng 10, 2021",
+    comments: 0,
+    excerpt: "Khi trồng mai, chúng ta thường gặp tình trạng vàng lá. Đây là vấn đề phổ biến người chơi mai mới nào cũng gặp phải...",
+    imageUrl: "/images/blog/dinh-duong/cach-diet-oc-sen-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "10+ Cách diệt trừ Nhện đỏ hiệu quả (kẻ thù của mọi cây trồng)",
+    date: "14 Tháng 9, 2021",
+    comments: 0,
+    excerpt: "Nhện đỏ là loài dịch hại nhỏ li ti hút nhựa cây. Chúng tấn công mặt dưới lá và hút nhựa sống của cây...",
+    imageUrl: "/images/blog/dinh-duong/cay-mai-bi-vang-la-do-thieu-dinh-duong-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "15+ Cách diệt trừ Ốc Sên cực đơn giản hiệu quả cho cây trồng",
+    date: "24 Tháng 8, 2021",
+    comments: 0,
+    excerpt: "Những cây rau bạn ngày quan sát không thấy dấu hiệu của sâu bệnh tấn công, nhưng trên các lá xuất hiện nhiều vết cắn lớn nhỏ khác nhau...",
+    imageUrl: "/images/blog/dinh-duong/lan-ho-diep-bi-vang-la-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "7 Loại sâu bệnh hại Bắp cải phổ biến nhà nông cần chú ý",
+    date: "28 Tháng 7, 2021",
+    comments: 0,
+    excerpt: "Sâu bệnh hại bắp cải là vấn đề khiến người trồng luôn quan tâm và mất nhiều thời gian, công sức để đối phó với chúng...",
+    imageUrl: "/images/blog/dinh-duong/nhen-do-1-330x240.jpg",
+    link: "#"
+  },
+  {
+    title: "Lan hồ điệp bị vàng lá là do nguyên nhân gì?",
+    date: "20 Tháng 6, 2021",
+    comments: 0,
+    excerpt: "Lan hồ điệp bị vàng lá là một trong những bệnh dễ gặp nhất trong quá trình chăm sóc loài cây này...",
+    imageUrl: "/images/blog/dinh-duong/thuoc-dac-tri-benh-rep-sap-2-330x240.jpg",
     link: "#"
   }
 ];
