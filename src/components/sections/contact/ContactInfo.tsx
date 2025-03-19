@@ -1,10 +1,22 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { faTwitter, faFacebookF, faYoutube, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPhone,
+  faEnvelope,
+  faMapMarkerAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faTwitter,
+  faFacebookF,
+  faYoutube,
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
 
 const ContactInfo = () => {
   return (
-    <div className="wow fadeInUp bg-[#3cb815] text-white flex flex-col justify-center h-full p-8 rounded-lg" data-wow-delay="0.1s">
+    <div
+      className="wow fadeInUp bg-[#3cb815] text-white flex flex-col justify-center h-full p-8 rounded-lg"
+      data-wow-delay="0.1s"
+    >
       <div className="space-y-8">
         <div>
           <h5 className="text-xl font-semibold mb-2">Gọi Cho Chúng Tôi</h5>
@@ -34,10 +46,10 @@ const ContactInfo = () => {
           <h5 className="text-xl font-semibold mb-4">Theo Dõi Chúng Tôi</h5>
           <div className="flex space-x-2">
             {[
-              { icon: faTwitter, href: '#' },
-              { icon: faFacebookF, href: '#' },
-              { icon: faYoutube, href: '#' },
-              { icon: faLinkedinIn, href: '#' }
+              { icon: faTwitter, href: "#" },
+              { icon: faFacebookF, href: "#" },
+              { icon: faYoutube, href: "#" },
+              { icon: faLinkedinIn, href: "#" },
             ].map((social, index) => (
               <a
                 key={index}

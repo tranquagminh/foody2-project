@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -31,14 +31,14 @@ const CheckoutSummary = () => {
             placeholder="Coupon Discount :"
             className="flex-1 px-4 py-2 border rounded focus:outline-none border-[#e2e8f0] focus:border-[#3cb815]"
           />
-          <Button 
+          <Button
             variant="contained"
             sx={{
-              borderRadius: '6px',
-              backgroundColor: '#3cb815',
+              borderRadius: "6px",
+              backgroundColor: "#3cb815",
               ":hover": {
-                backgroundColor: '#2da012'
-              }
+                backgroundColor: "#2da012",
+              },
             }}
           >
             Apply
@@ -47,7 +47,9 @@ const CheckoutSummary = () => {
 
         <div className="flex justify-between items-center">
           <span>Delivery :</span>
-          <span className="text-sm text-gray-500">*Free shipping over $150</span>
+          <span className="text-sm text-gray-500">
+            *Free shipping over $150
+          </span>
         </div>
 
         <div className="flex justify-between pt-4 border-t border-[#e2e8f0]">
@@ -59,16 +61,14 @@ const CheckoutSummary = () => {
             fullWidth
             variant="contained"
             sx={{
-              borderRadius: '6px',
-              backgroundColor: '#3cb815',
+              borderRadius: "6px",
+              backgroundColor: "#3cb815",
               ":hover": {
-                backgroundColor: '#2da012'
-              }
+                backgroundColor: "#2da012",
+              },
             }}
           >
-            <Link href="/thanh-toan">
-              Continue to Checkout
-            </Link>
+            <Link href="/thanh-toan">Continue to Checkout</Link>
           </Button>
         )}
       </div>

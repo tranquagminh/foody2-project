@@ -1,5 +1,5 @@
-"use client"
-import { useEffect, useRef, useState } from 'react';
+"use client";
+import { useEffect, useRef, useState } from "react";
 
 interface UseIntersectionObserverProps {
   threshold?: number;
@@ -8,7 +8,7 @@ interface UseIntersectionObserverProps {
 
 export const useIntersectionObserver = ({
   threshold = 0.1,
-  rootMargin = "0px"
+  rootMargin = "0px",
 }: UseIntersectionObserverProps = {}) => {
   const elementRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);

@@ -1,7 +1,7 @@
-"use client"
-import { useState, useRef, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
+"use client";
+import { useState, useRef, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const SearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,13 +10,16 @@ const SearchBar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
@@ -46,9 +49,9 @@ const SearchBar = () => {
         className={`absolute right-0 top-[calc(100%+10px)]  
           bg-white rounded-lg shadow-lg overflow-hidden
           transition-all duration-300 ease-in-out z-[1000] 
-          ${isOpen 
-            ? 'w-[300px] opacity-100 visible' 
-            : 'w-0 opacity-0 invisible'}`}
+          ${
+            isOpen ? "w-[300px] opacity-100 visible" : "w-0 opacity-0 invisible"
+          }`}
       >
         <div className="flex items-center px-4 h-12">
           <input
