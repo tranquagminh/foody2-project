@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import Image from "next/image";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 
 interface ProductCardProps {
   id: number;
@@ -14,17 +14,28 @@ interface ProductCardProps {
 }
 
 const categoryMapping: Record<string, string> = {
-  'vegetable': 'rau-cu',
-  'fruits': 'trai-cay',
-  'fresh': 'thuc-pham-tuoi'
+  vegetable: "rau-cu",
+  fruits: "trai-cay",
+  fresh: "thuc-pham-tuoi",
 };
 
-const ProductCard = ({id, image, title, price, oldPrice, delay, category }: ProductCardProps) => {
+const ProductCard = ({
+  id,
+  image,
+  title,
+  price,
+  oldPrice,
+  delay,
+  category,
+}: ProductCardProps) => {
   const categoryValue = categoryMapping[category];
   return (
     <div className="wow fadeInUp" data-wow-delay={`${delay}s`}>
       <div className="bg-white">
-        <div className="relative bg-gray-100 overflow-hidden">
+        <Link
+          href={`/san-pham/${categoryValue}/${id}`}
+          className="relative bg-gray-100 overflow-hidden"
+        >
           <Image
             src={image}
             alt={title}
@@ -32,13 +43,20 @@ const ProductCard = ({id, image, title, price, oldPrice, delay, category }: Prod
             height={300}
             className="w-full transition-transform duration-300 hover:scale-105"
           />
-          <div className="bg-[#F65005] rounded text-white absolute left-0 top-0 m-4 py-1 px-3">Mới</div>
-        </div>
+          <div className="bg-[#F65005] rounded text-white absolute left-0 top-0 m-4 py-1 px-3">
+            Mới
+          </div>
+        </Link>
         <div className="text-center p-4">
-          <Link href={`/san-pham/${id}`} className="block text-xl font-semibold mb-2 hover:text-[#3cb815] transition-colors">
+          <Link
+            href={`/san-pham/${categoryValue}/${id}`}
+            className="block text-xl font-semibold mb-2 hover:text-[#3cb815] transition-colors"
+          >
             {title}
           </Link>
-          <span className="text-2xl font-bold text-green-700">{price.toLocaleString()}đ</span>
+          <span className="text-2xl font-bold text-green-700">
+            {price.toLocaleString()}đ
+          </span>
           {oldPrice && (
             <span className="ml-2 text-gray-500 line-through">
               {oldPrice.toLocaleString()}đ
@@ -46,12 +64,21 @@ const ProductCard = ({id, image, title, price, oldPrice, delay, category }: Prod
           )}
         </div>
         <div className="flex border-t border-[#dee2e6]">
-          <Link href={`/san-pham/${categoryValue}/${id}`} className="w-1/2 text-center border-r border-[#dee2e6] py-2 hover:text-[#3cb815] transition-colors">
+          <Link
+            href={`/san-pham/${categoryValue}/${id}`}
+            className="w-1/2 text-center border-r border-[#dee2e6] py-2 hover:text-[#3cb815] transition-colors"
+          >
             <FontAwesomeIcon icon={faEye} className="text-[#3cb815] mr-2" />
             Chi tiết
           </Link>
-          <Link href="#" className="w-1/2 text-center py-2 hover:text-[#3cb815] transition-colors">
-            <FontAwesomeIcon icon={faShoppingBag} className="text-[#3cb815] mr-2" />
+          <Link
+            href="#"
+            className="w-1/2 text-center py-2 hover:text-[#3cb815] transition-colors"
+          >
+            <FontAwesomeIcon
+              icon={faShoppingBag}
+              className="text-[#3cb815] mr-2"
+            />
             Thêm vào giỏ hàng
           </Link>
         </div>

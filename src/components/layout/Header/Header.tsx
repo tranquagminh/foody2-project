@@ -23,12 +23,12 @@ import {
   knowledgeMenuItems,
 } from "../../../constants/homepage";
 import { ROUTES } from "@/constants/routes";
-import AuthModal from "@/components/auth/AuthModal";
+// import AuthModal from "@/components/auth/AuthModal";
 import SearchBar from "@/components/common/SearchBar";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [authModalOpen, setAuthModalOpen] = useState(false);
+  // const [authModalOpen, setAuthModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string[]>([]);
 
@@ -181,7 +181,7 @@ const Header: React.FC = () => {
           <Link
             href="#"
             className="self-center"
-            onClick={() => setAuthModalOpen(true)}
+            // onClick={() => setAuthModalOpen(true)}
           >
             <FontAwesomeIcon
               icon={faUser}
@@ -189,10 +189,10 @@ const Header: React.FC = () => {
             />
           </Link>
 
-          <AuthModal
+          {/* <AuthModal
             open={authModalOpen}
             onClose={() => setAuthModalOpen(false)}
-          />
+          /> */}
         </div>
 
         {/* Mobile Menu */}
