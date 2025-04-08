@@ -1,8 +1,8 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+// import Link from "next/link";
+// import Image from "next/image";
 import { products } from "@/constants/homepage";
-import AnimatedSection from "@/components/shared/AnimatedSection";
+// import AnimatedSection from "@/components/shared/AnimatedSection";
 import ProductCard from "../../homepage/ProductSection/ProductCard";
 
 const categoryMapping: Record<string, string> = {
