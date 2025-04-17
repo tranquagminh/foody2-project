@@ -1,27 +1,35 @@
-import React from "react";
-// import Link from "next/link";
-// import Image from "next/image";
-import { products } from "@/constants/homepage";
-// import AnimatedSection from "@/components/shared/AnimatedSection";
+"use client";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../../homepage/ProductSection/ProductCard";
+import { fetchProducts, Product } from "@/lib/api/woocommerce";
 
-const categoryMapping: Record<string, string> = {
-  "rau-cu": "vegetable",
-  "trai-cay": "fruits",
-  "thuc-pham-tuoi": "fresh",
-};
-
-async function CategoryProduct({
+function CategoryProduct({
   params,
 }: {
   params: Promise<{ category: string }>;
 }) {
-  const { category } = await params;
-  const categoryValue = categoryMapping[category];
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredProducts = categoryValue
-    ? products.filter((product) => product.category === categoryValue)
-    : [];
+  useEffect(() => {
+    const loadProducts = async () => {
+      setLoading(true);
+      const fetchedProducts = await fetchProducts();
+      setProducts(fetchedProducts);
+      setLoading(false);
+    };
+
+    loadProducts();
+  }, [params]);
+
+  const { category } = React.use(params); // Lấy category từ params
+  const filteredProducts = products.filter((product) =>
+    product.categories.some((cat) => cat.slug === category)
+  );
+
+  if (loading) {
+    return <div className="container mx-auto py-8">Đang tải...</div>;
+  }
 
   if (filteredProducts.length === 0) {
     return (
@@ -30,6 +38,7 @@ async function CategoryProduct({
       </div>
     );
   }
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {filteredProducts.map((product, index) => (
@@ -37,9 +46,17 @@ async function CategoryProduct({
           key={product.id}
           className="wow fadeInUp"
           data-wow-delay={`${0.1 + index * 0.2}s`}
-          style={{ visibility: "visible" }} // Force visibility
+          style={{ visibility: "visible" }}
         >
-          <ProductCard delay={0} {...product} />
+          <ProductCard
+            delay={0}
+            id={product.id}
+            image={product.images[0]?.src || "/default-image.jpg"}
+            title={product.name}
+            price={parseFloat(product.sale_price || product.price)}
+            oldPrice={parseFloat(product.regular_price)}
+            category={category}
+          />
         </div>
       ))}
     </div>

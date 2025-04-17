@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer";
 import BackToTop from "@/components/common/BackToTop";
+import { CartProvider } from "@/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,10 +16,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 const lora = Lora({
-  subsets: ['latin'],
-  display: 'swap',
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -36,10 +36,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lora.className} antialiased`}
       >
-        <Header />
+        <CartProvider>
+          <Header />
           {children}
           <BackToTop />
-        <Footer />
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );

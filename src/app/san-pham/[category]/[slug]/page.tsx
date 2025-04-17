@@ -1,8 +1,16 @@
-import { products } from "@/constants/homepage";
+"use client";
+import { useEffect, useState } from "react";
 import SectionContainer from "@/components/shared/SectionContainer";
 import PageHeader from "@/components/common/PageHeader";
 import ProductTabs from "@/components/sections/product/productDetail/ProductTabs";
 import ProductInfo from "@/components/sections/product/productDetail/ProductInfo";
+import {
+  fetchProducts,
+  fetchCategories,
+  Product,
+  Category,
+} from "@/lib/api/woocommerce";
+import React from "react";
 
 interface ProductDetailProps {
   params: Promise<{
@@ -11,10 +19,41 @@ interface ProductDetailProps {
   }>;
 }
 
-const ProductDetail = async (props: ProductDetailProps) => {
-  const { category, slug } = await props.params;
+const ProductDetail = (props: ProductDetailProps) => {
+  const [product, setProduct] = useState<Product | null>(null);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const product = products.find((p) => p.id === parseInt(slug));
+  useEffect(() => {
+    const loadData = async () => {
+      setLoading(true);
+
+      // Lấy params
+      const { category, slug } = await props.params;
+
+      // Fetch danh sách sản phẩm từ API
+      const products: Product[] = await fetchProducts();
+      const foundProduct = products.find((p) => p.id === parseInt(slug));
+      setProduct(foundProduct || null);
+
+      // Fetch danh sách category từ API
+      const fetchedCategories: Category[] = await fetchCategories();
+      setCategories(fetchedCategories);
+
+      setLoading(false);
+    };
+
+    loadData();
+  }, [props.params]);
+
+  // Lấy params để sử dụng trong render
+  const { category } = React.use(props.params);
+  const currentCategory = categories.find((cat) => cat.slug === category);
+  const categoryName = currentCategory ? currentCategory.name : category;
+
+  if (loading) {
+    return <div className="container mx-auto py-50">Đang tải...</div>;
+  }
 
   if (!product) {
     return <div>Sản phẩm không tồn tại!</div>;
@@ -27,10 +66,10 @@ const ProductDetail = async (props: ProductDetailProps) => {
         breadcrumbs={[
           { label: "Trang chủ", href: "/" },
           { label: "Sản phẩm", href: "/san-pham" },
-          { label: getCategoryName(category), href: `/san-pham/${category}` },
+          { label: categoryName, href: `/san-pham/${category}` },
           {
-            label: product.title,
-            href: `/san-pham/${category}/${slug}`,
+            label: product.name,
+            href: `/san-pham/${category}/${product.id}`,
             active: true,
           },
         ]}
@@ -48,17 +87,5 @@ const ProductDetail = async (props: ProductDetailProps) => {
     </>
   );
 };
-
-// Hàm này giúp hiển thị tên danh mục dễ đọc hơn
-function getCategoryName(category: string): string {
-  const categoryMap: Record<string, string> = {
-    "rau-cu": "Rau củ",
-    "trai-cay": "Trái cây",
-    "do-kho": "Đồ khô",
-    "thuc-pham-tuoi": "Thực phẩm tươi",
-  };
-
-  return categoryMap[category] || category;
-}
 
 export default ProductDetail;

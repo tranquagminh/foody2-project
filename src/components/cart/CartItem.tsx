@@ -1,14 +1,69 @@
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import Image from "next/image";
+import { useCart } from "@/context/CartContext"; // Import useCart
 
-const CartItem = () => {
+interface CartItemProps {
+  item: {
+    id: number;
+    image: string;
+    title: string;
+    price: number;
+    quantity: number;
+    category: string;
+    categoryName: string;
+  };
+}
+
+const CartItem = ({ item }: CartItemProps) => {
+  const { addToCart, setCartItems } = useCart(); // Lấy addToCart và setCartItems từ CartContext
+
+  // Hàm tăng số lượng
+  const increaseQuantity = () => {
+    addToCart({
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      image: item.image,
+      category: item.category,
+      categoryName: item.category,
+    });
+  };
+
+  // Hàm giảm số lượng
+  const decreaseQuantity = () => {
+    if (item.quantity > 1) {
+      setCartItems((prevItems) =>
+        prevItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            : cartItem
+        )
+      );
+    }
+  };
+
+  // Hàm xóa sản phẩm
+  const removeItem = () => {
+    setCartItems((prevItems) =>
+      prevItems.filter((cartItem) => cartItem.id !== item.id)
+    );
+  };
+
+  // Định dạng giá tiền theo kiểu Việt Nam
+  const formatPrice = (price: number) => {
+    return price.toLocaleString("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    });
+  };
+
   return (
     <div className="flex items-center gap-6 p-4 bg-white rounded-lg border border-[#e2e8f0] hover:border-[#3cb815] transition-colors">
       {/* Product Image */}
       <div className="w-24 h-24">
         <Image
-          src="/images/products/product-1.jpg"
-          alt="Banana"
+          src={item.image}
+          alt={item.title}
           className="w-full h-full object-contain"
           width={500}
           height={500}
@@ -19,16 +74,16 @@ const CartItem = () => {
       <div className="flex-1">
         <div className="flex justify-between items-start">
           <div>
-            <span className="text-xs text-[#3cb815] uppercase">FRUITS</span>
+            <span className="text-xs text-[#3cb815] uppercase">
+              {item.categoryName}
+            </span>
             <h3 className="font-semibold">
-              Banana <span className="text-sm text-gray-500">x5kg</span>
+              {item.title}{" "}
+              <span className="text-sm text-gray-500">x{item.quantity}</span>
             </h3>
-
-            {/* Rating */}
-            <div className="flex items-center gap-2">
-              <div className="flex text-yellow-400">{"★".repeat(5)}</div>
-              <span className="text-sm text-gray-500">(98)</span>
-            </div>
+            <span className="text-xs text-[#111111] uppercase">
+              {formatPrice(item.price)}
+            </span>
           </div>
         </div>
 
@@ -36,21 +91,29 @@ const CartItem = () => {
         <div className="flex justify-between items-center mt-4">
           <div className="flex items-center gap-3">
             <div className="flex items-center border border-[#e2e8f0] rounded-full">
-              <button className="px-3 py-1 rounded-full bg-[#e2e8f0] hover:bg-gray-100">
+              <button
+                onClick={decreaseQuantity}
+                className="px-3 py-1 rounded-full bg-[#e2e8f0] hover:bg-gray-100"
+              >
                 -
               </button>
-              <span className="px-4 py-1 ">5</span>
-              <button className="px-3 py-1 rounded-full bg-[#e2e8f0] hover:bg-gray-100">
+              <span className="px-4 py-1">{item.quantity}</span>
+              <button
+                onClick={increaseQuantity}
+                className="px-3 py-1 rounded-full bg-[#e2e8f0] hover:bg-gray-100"
+              >
                 +
               </button>
             </div>
-            <DeleteOutlineIcon className="text-gray-400 cursor-pointer hover:text-red-500" />
+            <DeleteOutlineIcon
+              onClick={removeItem}
+              className="text-gray-400 cursor-pointer hover:text-red-500"
+            />
           </div>
 
           <div className="text-right">
-            <div className="font-semibold">$15.00</div>
-            <div className="text-sm text-gray-500">
-              Delivery on Thursday, 23 March
+            <div className="font-semibold">
+              {formatPrice(item.price * item.quantity)}
             </div>
           </div>
         </div>
@@ -58,4 +121,5 @@ const CartItem = () => {
     </div>
   );
 };
+
 export default CartItem;

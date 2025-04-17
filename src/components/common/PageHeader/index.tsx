@@ -17,7 +17,7 @@ const PageHeader = ({ title, breadcrumbs }: PageHeaderProps) => {
     <div className="relative bg-page-header bg-[#F7F8FC] mb-20 pt-45 pb-24 overflow-hidden">
       <div className="px-12 mx-auto">
         <AnimatedSection animation="fadeIn" delay={0.1} className="text-left">
-          <h1 className="text-6xl font-bold mb-6">{title}</h1>
+          <h1 className="text-6xl font-bold  mb-6">{title}</h1>
 
           <nav className="flex justify-start">
             <ol className="flex items-center space-x-2">

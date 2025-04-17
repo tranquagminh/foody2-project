@@ -12,7 +12,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .testimonial-slider .swiper-button-next:after,
@@ -25,18 +25,18 @@ body {
 }
 
 .bg-icon-pattern {
-  background-image: url('/images/backgrounds/bg-icon.png');
+  background-image: url("/images/backgrounds/bg-icon.png");
   background-size: cover;
 }
 
 .bg-page-header {
-  background-image: url('/images/carousel/carousel-1.jpg');
+  background-image: url("/images/carousel/carousel-1.jpg");
   background-size: cover;
 }
 
-.wow {
+/* .wow {
   visibility: hidden;
-}
+} */
 
 .animated {
   animation-duration: 1s;
@@ -75,4 +75,59 @@ body {
 .navbar-container {
   position: relative;
   z-index: 100;
+}
+
+.prose {
+  @apply text-gray-800 leading-relaxed;
+}
+
+/* Style cho heading */
+.prose h2 {
+  @apply text-3xl font-bold mt-8 mb-4 text-gray-900;
+}
+
+.prose h3 {
+  @apply text-2xl font-semibold mt-6 mb-3 text-gray-900;
+}
+
+.prose h4 {
+  @apply text-xl font-semibold mt-4 mb-2 text-gray-900;
+}
+
+/* Style cho block quote */
+.prose blockquote {
+  @apply border-l-4 border-green-500 pl-4 italic text-gray-600 my-4;
+}
+
+/* Style cho hình ảnh */
+.prose img {
+  @apply w-1/2 h-auto rounded-lg my-4 m-auto;
+}
+
+/* Style cho caption (figcaption) */
+.prose figcaption {
+  @apply text-center text-sm text-gray-500 mt-2 italic;
+}
+
+/* Style cho danh sách */
+.prose ul {
+  @apply list-disc pl-6 my-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+/* Style cho đoạn văn */
+.prose p {
+  @apply mb-4;
+}
+
+/* Style cho văn bản in đậm và nghiêng */
+.prose strong {
+  @apply font-bold;
+}
+
+.prose em {
+  @apply italic;
 }

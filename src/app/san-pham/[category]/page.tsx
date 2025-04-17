@@ -1,14 +1,31 @@
-import React from "react";
+"use client";
+import { useEffect, useState } from "react";
 import PageHeader from "@/components/common/PageHeader";
 import CategoryProduct from "@/components/sections/product/category/CategoryProduct";
 import SectionContainer from "@/components/shared/SectionContainer";
+import { Category, fetchCategories } from "@/lib/api/woocommerce";
+import React from "react";
 
-export default async function CategoryPage({
+export default function CategoryPage({
   params,
 }: {
   params: Promise<{ category: string }>;
 }) {
-  const { category } = await params;
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    const loadCategories = async () => {
+      const fetchedCategories = await fetchCategories();
+      setCategories(fetchedCategories);
+    };
+
+    loadCategories();
+  }, []);
+
+  const { category } = React.use(params);
+  const currentCategory = categories.find((cat) => cat.slug === category);
+  const categoryName = currentCategory ? currentCategory.name : category;
+
   return (
     <>
       <PageHeader
@@ -17,7 +34,7 @@ export default async function CategoryPage({
           { label: "Trang chủ", href: "/" },
           { label: "Sản phẩm", href: "/san-pham" },
           {
-            label: getCategoryName(category),
+            label: categoryName,
             href: `/san-pham/${category}`,
             active: true,
           },
@@ -30,15 +47,4 @@ export default async function CategoryPage({
       </SectionContainer>
     </>
   );
-}
-
-function getCategoryName(category: string): string {
-  const categoryMap: Record<string, string> = {
-    "rau-cu": "Rau củ",
-    "trai-cay": "Trái cây",
-    "do-kho": "Đồ khô",
-    "thuc-pham-tuoi": "Thực phẩm tươi",
-  };
-
-  return categoryMap[category] || category;
 }

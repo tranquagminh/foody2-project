@@ -23,12 +23,12 @@ import {
   knowledgeMenuItems,
 } from "../../../constants/homepage";
 import { ROUTES } from "@/constants/routes";
-// import AuthModal from "@/components/auth/AuthModal";
 import SearchBar from "@/components/common/SearchBar";
+import { useCart } from "@/context/CartContext"; // Import useCart
 
 const Header: React.FC = () => {
+  const { cartCount } = useCart(); // Lấy cartCount từ CartContext
   const [isScrolled, setIsScrolled] = useState(false);
-  // const [authModalOpen, setAuthModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string[]>([]);
 
@@ -116,8 +116,7 @@ const Header: React.FC = () => {
         <div className="flex">
           <Link href="/" className="text-[40px] self-center">
             <h1 className="font-bold text-[#3cb815]">
-              F<span className="text-[#f65005]">oo</span>
-              dy
+              F<span className="text-[#f65005]">oo</span>dy
             </h1>
           </Link>
         </div>
@@ -172,40 +171,32 @@ const Header: React.FC = () => {
           <div className="self-center">
             <SearchBar />
           </div>
-          <Link href="/gio-hang" className="self-center">
+          <Link href="/gio-hang" className="self-center relative">
             <FontAwesomeIcon
               icon={faShoppingBag}
-              className="hover:bg-[#3cb815]  p-2 bg-white rounded-full hover:text-white transition-all"
+              className="hover:bg-[#3cb815] p-2 bg-white rounded-full hover:text-white transition-all"
             />
+            {cartCount > 0 && (
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                {cartCount}
+              </span>
+            )}
           </Link>
-          <Link
-            href="#"
-            className="self-center"
-            // onClick={() => setAuthModalOpen(true)}
-          >
+          <Link href="#" className="self-center">
             <FontAwesomeIcon
               icon={faUser}
               className="bg-white p-2 rounded-full hover:bg-[#3cb815] hover:text-white transition-all"
             />
           </Link>
-
-          {/* <AuthModal
-            open={authModalOpen}
-            onClose={() => setAuthModalOpen(false)}
-          /> */}
         </div>
 
         {/* Mobile Menu */}
         <div
           className={`
-                    lg:hidden fixed top-[60px] left-0 w-full bg-white shadow-lg
-                    transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-60px)]
-                    ${
-                      isMobileMenuOpen
-                        ? "opacity-100 visible"
-                        : "opacity-0 invisible"
-                    }
-                `}
+            lg:hidden fixed top-[60px] left-0 w-full bg-white shadow-lg
+            transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-60px)]
+            ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+          `}
         >
           <ul className="py-4">
             <li className="px-6 py-3 hover:bg-gray-50">
@@ -227,7 +218,6 @@ const Header: React.FC = () => {
                   }`}
                 />
               </div>
-              {/* Submenu */}
               <ul
                 className={`pl-4 mt-2 space-y-2 overflow-hidden transition-all duration-300 ${
                   openSubMenu.includes("products")
@@ -255,7 +245,6 @@ const Header: React.FC = () => {
                   }`}
                 />
               </div>
-              {/* Submenu */}
               <ul
                 className={`pl-4 mt-2 space-y-2 overflow-hidden transition-all duration-300 ${
                   openSubMenu.includes("knowledge")

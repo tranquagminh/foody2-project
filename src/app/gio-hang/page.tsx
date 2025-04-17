@@ -3,8 +3,12 @@ import CartItem from "@/components/cart/CartItem";
 import CheckoutSummary from "@/components/cart/CheckoutSummary";
 import SectionContainer from "@/components/shared/SectionContainer";
 import { Container, Grid, Typography, Button } from "@mui/material";
+import { useCart } from "@/context/CartContext"; // Import useCart
+import Link from "next/link";
 
 export default function CartPage() {
+  const { cartItems } = useCart(); // Lấy danh sách sản phẩm từ CartContext
+
   return (
     <SectionContainer className="!py-0 bg-icon-pattern bg-[#f7f8fc]">
       <Container className="py-40">
@@ -18,15 +22,20 @@ export default function CartPage() {
                 fontFamily: "latin",
               }}
             >
-              3 Items Added
+              {cartItems.length} sản phẩm
             </Typography>
 
-            <div className="space-y-4 ">
-              {/* Cart Item */}
-              <CartItem />
-              <CartItem />
-              <CartItem />
-            </div>
+            {cartItems.length > 0 ? (
+              <div className="space-y-4">
+                {cartItems.map((item) => (
+                  <CartItem key={item.id} item={item} />
+                ))}
+              </div>
+            ) : (
+              <Typography variant="body1" className="text-gray-500">
+                Giỏ hàng trống.
+              </Typography>
+            )}
 
             <div className="flex gap-4 mt-8">
               <Button
@@ -42,7 +51,7 @@ export default function CartPage() {
                   },
                 }}
               >
-                Go To Back
+                <Link href="/">Quay lại</Link>
               </Button>
             </div>
           </Grid>

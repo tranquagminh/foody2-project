@@ -1,17 +1,22 @@
 "use client";
 import React from "react";
+import { useCart } from "@/context/CartContext";
 
-const OrderSummary = () => {
-  // const [couponCode, setCouponCode] = useState('');
+const OrderSummary = ({ onSubmit }: { onSubmit: () => void }) => {
+  const { cartItems } = useCart();
 
-  // Sample order data
-  const orderItems = [
-    { id: 1, name: "Dưa Leo Xanh", quantity: 6, price: 475000 },
-  ];
+  const subtotal = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+  const total = subtotal;
 
-  // Calculate totals
-  const subtotal = orderItems.reduce((total, item) => total + item.price, 0);
-  const total = subtotal; // Can be modified if there are discounts
+  const formatPrice = (price: number) => {
+    return price.toLocaleString("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    });
+  };
 
   return (
     <div className="bg-white rounded-lg shadow-sm p-6">
@@ -23,33 +28,39 @@ const OrderSummary = () => {
           <div>Subtotal</div>
         </div>
 
-        {orderItems.map((item) => (
+        {cartItems.map((item) => (
           <div key={item.id} className="flex justify-between py-3 border-t">
             <div>
-              {item.name} × {item.quantity}
+              {item.title} × {item.quantity}
             </div>
-            <div>{item.price.toLocaleString()}đ</div>
+            <div>{formatPrice(item.price * item.quantity)}</div>
           </div>
         ))}
 
         <div className="flex justify-between py-3 border-t">
           <div className="font-medium">Total</div>
-          <div className="font-bold">{total.toLocaleString()}đ</div>
+          <div className="font-bold">{formatPrice(total)}</div>
         </div>
       </div>
 
       <div className="mt-6">
-        <h3 className="text-lg font-medium mb-2">Trả tiền mặt khi nhận hàng</h3>
+        <h3 className="text-lg font-medium mb-2">
+          Trả tiền mặt khi nhận hàng (COD)
+        </h3>
 
         <div className="bg-gray-100 p-4 rounded mt-2">
-          <p className="text-gray-700">Trả tiền mặt khi giao hàng</p>
+          <p className="text-gray-700">
+            Quý khách thanh toán cho nhân viên giao hàng hoặc chuyển khoản đến
+            số tài khoản của công ty khi nhận hàng.
+          </p>
         </div>
       </div>
 
       <div className="mt-6">
         <button
-          className="w-full bg-green-500 text-white py-3 rounded-md hover:bg-green-600 transition"
-          type="submit"
+          className="w-full bg-green-500 text-white py-3 rounded-md hover:bg-green-600 transition hover:cursor-pointer"
+          type="button"
+          onClick={onSubmit}
         >
           Đặt hàng
         </button>

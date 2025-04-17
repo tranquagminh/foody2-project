@@ -13,13 +13,13 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        greatVibes: ['"Great Vibes"', 'cursive'],
+        greatVibes: ['"Great Vibes"', "cursive"],
       },
-      backgroundImage: { 
-        'icon-pattern': "url('../public/images/backgrounds/bg-icon.png')",
+      backgroundImage: {
+        "icon-pattern": "url('../public/images/backgrounds/bg-icon.png')",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

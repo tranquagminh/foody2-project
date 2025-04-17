@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import Image from "next/image";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 interface BlogCardProps {
   image: string;
@@ -9,26 +9,26 @@ interface BlogCardProps {
   author: string;
   date: string;
   delay: number;
+  id: number; // Thêm id để tạo link đến trang chi tiết
 }
 
-const BlogCard = ({ image, title, author, date, delay }: BlogCardProps) => {
+const BlogCard = ({ image, title, author, date, delay, id }: BlogCardProps) => {
   return (
-    <div 
-      className="wow fadeInUp h-full flex flex-col" 
+    <div
+      className="wow fadeInUp h-full flex flex-col"
       data-wow-delay={`${delay}s`}
     >
-      <div className="overflow-hidden">
+      <div className="overflow-hidden relative w-full h-64">
         <Image
           src={image}
           alt={title}
-          width={400}
-          height={300}
-          className="w-full hover:scale-105 transition-transform duration-300"
+          fill
+          className="w-full object-cover object-center hover:scale-105 transition-transform duration-300"
         />
       </div>
       <div className="bg-[#f7f8fc] p-6 flex flex-col flex-grow">
         <Link
-          href="#"
+          href={`/blog/${id}`}
           className="block text-xl font-semibold mb-4 hover:text-[#3cb815] transition-colors line-clamp-2 font-lora"
         >
           {title}
@@ -39,7 +39,10 @@ const BlogCard = ({ image, title, author, date, delay }: BlogCardProps) => {
             {author}
           </span>
           <span className="flex items-center">
-            <FontAwesomeIcon icon={faCalendar} className="text-[#3cb815] mr-2" />
+            <FontAwesomeIcon
+              icon={faCalendar}
+              className="text-[#3cb815] mr-2"
+            />
             {date}
           </span>
         </div>
