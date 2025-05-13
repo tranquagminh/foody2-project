@@ -16,8 +16,7 @@ const Footer = () => {
           {/* Company Section */}
           <div>
             <h1 className="font-bold text-[40px] text-[#3cb815]">
-              F<span className="text-[#f65005]">oo</span>
-              dy
+              Or<span className="text-[#f65005]">ganic</span> Farm
             </h1>
             <p className="mb-4">
               Chúng tôi mang đến những món ăn ngon và dịch vụ tuyệt vời. Hãy đến

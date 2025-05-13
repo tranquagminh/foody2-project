@@ -11,6 +11,7 @@ import {
   Media,
   Author,
 } from "@/lib/api/PostsApi";
+import { decodeHTMLEntities } from "@/lib/utils/stringSpecial";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -108,7 +109,7 @@ const BlogPage = () => {
             const featuredImage = post.featured_media
               ? media[post.featured_media]?.source_url.replace(
                   "https://",
-                  "http://"
+                  "https://"
                 ) || "/default-image.jpg"
               : "/default-image.jpg";
             const authorName =
@@ -126,7 +127,7 @@ const BlogPage = () => {
                 data-wow-delay={`${0.1 + index * 0.2}s`}
               >
                 <NewsItem
-                  title={post.title.rendered}
+                  title={decodeHTMLEntities(post.title.rendered)}
                   date={date}
                   comments={0} // WordPress API không trả về số bình luận trực tiếp, cần fetch riêng nếu muốn
                   excerpt={post.excerpt.rendered.replace(/<[^>]+>/g, "")}

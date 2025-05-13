@@ -20,7 +20,7 @@ function ProductInfo({ product }: ProductInfoProps) {
   const categoryName = product.categories[0]?.name || "Không xác định";
   const categorySlug = product.categories[0]?.slug || "";
   const featureImg =
-    product.images[0]?.src.replace("https", "http") || "/default-image.jpg";
+    product.images[0]?.src.replace("https", "https") || "/default-image.jpg";
 
   // Hàm tăng/giảm số lượng
   const handleIncreaseQuantity = () => {
@@ -62,7 +62,7 @@ function ProductInfo({ product }: ProductInfoProps) {
           </div>
 
           <div className="flex justify-center">
-            <Image
+            <img
               src={featureImg}
               alt={product.name}
               width={400}

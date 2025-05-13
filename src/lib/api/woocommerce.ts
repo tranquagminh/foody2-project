@@ -32,7 +32,7 @@ export interface Category {
 
 // Cấu hình axios instance
 const api = axios.create({
-  baseURL: "https://localhost/WordPress/wp-json/wc/v3",
+  baseURL: "https://localhost:8443/wp-json/wc/v3",
   headers: {
     Authorization: `Basic ${btoa(
       `${process.env.NEXT_PUBLIC_WOOCOMMERCE_CONSUMER_KEY}:${process.env.NEXT_PUBLIC_WOOCOMMERCE_CONSUMER_SECRET}`
@@ -99,7 +99,7 @@ interface OrderData {
 export const createOrder = async (orderData: OrderData) => {
   try {
     const response = await api.post(
-      `https://localhost/WordPress/wp-json/wc/v3/orders`,
+      `https://localhost:8443/wp-json/wc/v3/orders`,
       {
         payment_method: "cod",
         payment_method_title: "Thanh toán khi nhận hàng (COD)",

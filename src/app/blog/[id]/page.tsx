@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import PageHeader from "@/components/common/PageHeader";
 import SectionContainer from "@/components/shared/SectionContainer";
+import { decodeHTMLEntities } from "@/lib/utils/stringSpecial";
 import {
   fetchPostById,
   fetchMedia,
@@ -73,11 +74,11 @@ const PostDetail = () => {
   const breadcrumbs: BreadcrumbItem[] = [
     { label: "Trang chủ", href: "/" },
     { label: "Bài viết", href: "/kien-thuc" },
-    { label: post.title.rendered, href: `/blog/${post.id}`, active: true },
+    { label: decodeHTMLEntities(post.title.rendered), href: `/blog/${post.id}`, active: true },
   ];
 
   const featuredImage =
-    media?.source_url.replace("https://", "http://") || "/default-image.jpg";
+    media?.source_url.replace("https://", "https://") || "/default-image.jpg";
   const authorName = author?.name || "Tác giả không xác định";
   const date = new Date(post.date).toLocaleDateString("vi-VN", {
     day: "2-digit",
@@ -93,7 +94,7 @@ const PostDetail = () => {
           {/* Hình ảnh nổi bật */}
           {featuredImage && (
             <div className="mb-8">
-              <Image
+              <img
                 src={featuredImage}
                 alt={post.title.rendered}
                 className="w-full h-96 object-cover rounded-lg"
@@ -104,7 +105,7 @@ const PostDetail = () => {
           )}
 
           <h1 className="text-6xl font-bold leading-20 mb-6">
-            {post.title.rendered}
+            {decodeHTMLEntities(post.title.rendered)}
           </h1>
 
           {/* Thông tin bài viết */}
@@ -118,7 +119,7 @@ const PostDetail = () => {
           {/* Nội dung bài viết */}
           <div
             className="prose max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+            dangerouslySetInnerHTML={{ __html: decodeHTMLEntities(post.content.rendered) }}
           />
         </div>
       </SectionContainer>

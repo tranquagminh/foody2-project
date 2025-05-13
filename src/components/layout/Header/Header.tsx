@@ -116,7 +116,7 @@ const Header: React.FC = () => {
         <div className="flex">
           <Link href="/" className="text-[40px] self-center">
             <h1 className="font-bold text-[#3cb815]">
-              F<span className="text-[#f65005]">oo</span>dy
+              Or<span className="text-[#f65005]">ganic</span> Farm
             </h1>
           </Link>
         </div>

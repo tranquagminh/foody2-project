@@ -26,7 +26,7 @@ const ProductCard = ({
   categoryName,
 }: ProductCardProps) => {
   const { addToCart } = useCart(); // Sử dụng useCart để lấy hàm addToCart
-  const featuredImg = image.replace("https", "http");
+  const featuredImg = image.replace("https", "https");
 
   const handleAddToCart = () => {
     // Gọi addToCart với thông tin sản phẩm
@@ -47,7 +47,7 @@ const ProductCard = ({
           href={`/san-pham/${category}/${id}`}
           className="relative bg-gray-100 overflow-hidden block aspect-square"
         >
-          <Image
+          <img
             src={featuredImg}
             alt={title}
             width={300}

@@ -23,7 +23,7 @@ const NewsItem: React.FC<NewsItemProps> = ({
       <div className="lg:w-1/3 w-full px-4 mb-4 lg:mb-0">
         <a href={link} className="relative block">
           {/* Ảnh gốc */}
-          <Image
+          <img
             src={imageUrl}
             alt={title}
             width={330}

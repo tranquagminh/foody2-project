@@ -34,7 +34,7 @@ export interface Author {
 
 // Cấu hình axios instance
 const api = axios.create({
-  baseURL: "https://localhost/WordPress/wp-json/wp/v2", // Sử dụng HTTP để tránh lỗi SSL
+  baseURL: "https://localhost:8443/wp-json/wp/v2", // Sử dụng HTTP để tránh lỗi SSL
   headers: {
     Authorization: `Basic ${btoa(
       `${process.env.NEXT_PUBLIC_WOOCOMMERCE_CONSUMER_KEY}:${process.env.NEXT_PUBLIC_WOOCOMMERCE_CONSUMER_SECRET}`

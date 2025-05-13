@@ -61,7 +61,7 @@ const CartItem = ({ item }: CartItemProps) => {
     <div className="flex items-center gap-6 p-4 bg-white rounded-lg border border-[#e2e8f0] hover:border-[#3cb815] transition-colors">
       {/* Product Image */}
       <div className="w-24 h-24">
-        <Image
+        <img
           src={item.image}
           alt={item.title}
           className="w-full h-full object-contain"

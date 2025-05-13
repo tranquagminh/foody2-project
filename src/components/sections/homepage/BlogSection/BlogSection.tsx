@@ -83,7 +83,7 @@ const BlogSection = () => {
           const featuredImage = post.featured_media
             ? media[post.featured_media]?.source_url.replace(
                 "https://",
-                "http://"
+                "https://"
               ) || "/default-image.jpg"
             : "/default-image.jpg";
           const authorName =
