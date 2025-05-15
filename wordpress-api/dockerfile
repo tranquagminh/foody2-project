@@ -1,0 +1,14 @@
+FROM wordpress:latest
+
+# Cài đặt SSL
+RUN a2enmod ssl
+RUN a2enmod rewrite
+
+# Sao chép tập tin cấu hình
+COPY apache-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+RUN a2ensite default-ssl
+
+# Mở cổng 443
+EXPOSE 80 443
+
+CMD ["apache2-foreground"]
